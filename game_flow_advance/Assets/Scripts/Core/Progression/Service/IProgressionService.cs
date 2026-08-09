@@ -4,7 +4,6 @@ namespace RossoGames.Progression.Service
 {
     public interface IProgressionService : IService, IInitializable
     {
-        string[] GetUnlockedBuildings();
         void SaveProgression();
     }
 }

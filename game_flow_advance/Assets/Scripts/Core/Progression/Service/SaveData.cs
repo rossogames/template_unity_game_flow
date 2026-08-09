@@ -1,6 +1,5 @@
 using Rossoforge.Core.UserData;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace RossoGames.Progression.Data
@@ -10,7 +9,6 @@ namespace RossoGames.Progression.Data
     {
         [SerializeField] private int version;
         public bool Initialized;
-        public List<string> UnlockedBuildings;
 
         public int Version
         {
@@ -20,7 +18,6 @@ namespace RossoGames.Progression.Data
 
         public SaveData()
         {
-            UnlockedBuildings = new List<string>();
             Initialized = false;
         }
     }

@@ -21,11 +21,6 @@ namespace RossoGames.Progression.Service
             _userDataService.Load();
         }
 
-        public string[] GetUnlockedBuildings()
-        {
-            return _userDataService.CurrentSave.UnlockedBuildings.ToArray();
-        }
-
         public void SaveProgression()
         {
             var currentSave = _userDataService.CurrentSave;
