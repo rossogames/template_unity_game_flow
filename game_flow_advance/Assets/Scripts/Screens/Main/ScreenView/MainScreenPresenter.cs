@@ -15,13 +15,11 @@ namespace RossoGames.Main.ScreenView
 {
     public class MainScreenPresenter : ScreenPresenter<MainScreenView, MainScreenPresenter>
     {
-        private readonly ISceneFlowService _sceneFlowService;
         private readonly IPopupFlowService _popupFlowService;
         private readonly IGameplayService _gameplayService;
 
         public MainScreenPresenter(MainScreenView view) : base(view)
         {
-            _sceneFlowService = ServiceLocator.Get<ISceneFlowService>();
             _popupFlowService = ServiceLocator.Get<IPopupFlowService>();
             _gameplayService = ServiceLocator.Get<IGameplayService>();
         }
@@ -29,7 +27,6 @@ namespace RossoGames.Main.ScreenView
         public void PlayGame()
         {
             _gameplayService.StartGameplay();
-            _sceneFlowService.GoToGamePlayScene(SceneTransitionType.FadeInOut);
         }
         public void OpenSettingsPopup()
         {

@@ -14,8 +14,6 @@ namespace RossoGames.Gameplay.Service
     public class GameplayService : IGameplayService, IDisposable,
         //--INPUTS--
         IEventListener<CancelInputPressedEvent>,
-        //--GAMEPLAY--
-        IEventListener<GameplayFinishEvent>,
         //--LEVEL--
         IEventListener<LevelLoadedEvent>
     {
@@ -72,10 +70,7 @@ namespace RossoGames.Gameplay.Service
         //--INPUTS--
         public void OnEventInvoked(CancelInputPressedEvent eventArg)
         {
-            if (_stateMachine == null || _stateMachine.CurrentState == null)
-                return;
-
-            if (_timeFlowService.IsPaused)
+            if (!CanInvokenInputEvent())
                 return;
 
             if (!_stateMachine.CurrentState.DataBehaviour.AllowPause)
@@ -84,9 +79,6 @@ namespace RossoGames.Gameplay.Service
             _ = PauseGame();
         }
 
-        //--GAMEPLAY--
-        public void OnEventInvoked(GameplayFinishEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-
         //--LEVEL--
         public void OnEventInvoked(LevelLoadedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
 
@@ -94,8 +86,6 @@ namespace RossoGames.Gameplay.Service
         {
             //--INPUTS--
             _eventService.RegisterListener<CancelInputPressedEvent>(this);
-            //--GAMEPLAY--
-            _eventService.RegisterListener<GameplayFinishEvent>(this);
             //--LEVEL--
             _eventService.RegisterListener<LevelLoadedEvent>(this);
         }
@@ -103,8 +93,6 @@ namespace RossoGames.Gameplay.Service
         {
             //--INPUTS--
             _eventService.UnregisterListener<CancelInputPressedEvent>(this);
-            //--GAMEPLAY--
-            _eventService.UnregisterListener<GameplayFinishEvent>(this);
             //--LEVEL--
             _eventService.UnregisterListener<LevelLoadedEvent>(this);
         }
