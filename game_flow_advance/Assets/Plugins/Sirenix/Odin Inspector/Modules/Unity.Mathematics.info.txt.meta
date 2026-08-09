@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 47a84ebde4ec47fabb620b30cc7a096f
-timeCreated: 1488828285
-DefaultImporter:
+guid: 2a6479328d967a54987028076bf6a82e
+TextScriptImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
@@ -10,5 +10,5 @@ AssetOrigin:
   productId: 89041
   packageName: Odin Inspector and Serializer
   packageVersion: 4.0.2.3
-  assetPath: Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.xml
+  assetPath: Assets/Plugins/Sirenix/Odin Inspector/Modules/Unity.Mathematics.info.txt
   uploadId: 957408

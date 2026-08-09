@@ -16,7 +16,7 @@ namespace RossoGames.Level.Service
         private IPoolService _poolService;
 
         private LevelHandlerEnvironment _levelHandlerEnvironment;
-        
+
         public LevelServiceData ServiceData { get; private set; }
 
         public LevelService(LevelServiceData serviceData)
