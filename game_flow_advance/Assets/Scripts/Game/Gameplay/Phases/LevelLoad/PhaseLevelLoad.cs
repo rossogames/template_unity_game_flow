@@ -14,6 +14,8 @@ namespace RossoGames.Gameplay.Phases.LevelLoad
         {
             base.OnEventInvoked(eventArg);
             Debug.LogWarning($"PhaseLevelLoad: Level {eventArg.LevelDataAsset.name} loaded");
+
+            // TODO: quitar la pausa de en esta fase
         }
     }
 }
