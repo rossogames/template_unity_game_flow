@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b3c2a8c74f62914597e359d200ff24f, type: 3}
+  m_Name: BuildableTileDataAsset_common
+  m_EditorClassIdentifier: Game::RossoGames.Level.DataAsset.BuildableTileDataAsset
+  <AssetReference>k__BackingField: {fileID: 5797159814536486832, guid: 3929037de0d37d54f8ba01e2e38983c3, type: 3}
+  <DataBehaviour>k__BackingField: {fileID: 11400000, guid: 7ffaeb0dd9945c54da3334e6482ab9f6, type: 2}

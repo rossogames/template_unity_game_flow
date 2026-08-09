@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 412433d544128cd4d887bc91d8c6f163
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 325049
+  packageName: Low Poly Mega City
+  packageVersion: 1.04
+  assetPath: Assets/Plugins/JC_LP_MegaCity/Scenes/Settings/URP_JC_LP_MegaCity_Renderer.asset
+  uploadId: 910864

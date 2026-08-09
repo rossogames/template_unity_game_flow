@@ -1,0 +1,30 @@
+{
+    "name": "Game",
+    "rootNamespace": "Game",
+    "references": [
+        "Unity.InputSystem",
+        "Unity.TextMeshPro",
+        "Rossoforge.Core",
+        "Rossoforge.Services",
+        "Rossoforge.Audio",
+        "Rossoforge.Events",
+        "Rossoforge.TimeFlow",
+        "Rossoforge.Extensions",
+        "Rossoforge.Pool",
+        "Rossoforge.Scenes",
+        "Rossoforge.UI.Controls",
+        "Rossoforge.UI.Popups",
+        "Rossoforge.UI.Screens",
+        "Rossoforge.Utils",
+        "Rossoforge.UserData"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

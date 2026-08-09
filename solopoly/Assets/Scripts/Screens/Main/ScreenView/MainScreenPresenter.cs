@@ -1,0 +1,51 @@
+using RossoGames.Popups.PopupQuestion;
+using Rossoforge.Services;
+using Rossoforge.UI.Screens.ScreenBase;
+using RossoGames.SceneFlow.Service;
+using RossoGames.PopupFlow.Service;
+using RossoGames.Gameplay.Service;
+
+#if UNITY_EDITOR
+using UnityEditor;
+#else
+using UnityEngine;
+#endif
+
+namespace RossoGames.Main.ScreenView
+{
+    public class MainScreenPresenter : ScreenPresenter<MainScreenView, MainScreenPresenter>
+    {
+        private readonly ISceneFlowService _sceneFlowService;
+        private readonly IPopupFlowService _popupFlowService;
+        private readonly IGameplayService _gameplayService;
+
+        public MainScreenPresenter(MainScreenView view) : base(view)
+        {
+            _sceneFlowService = ServiceLocator.Get<ISceneFlowService>();
+            _popupFlowService = ServiceLocator.Get<IPopupFlowService>();
+            _gameplayService = ServiceLocator.Get<IGameplayService>();
+        }
+
+        public void PlayGame()
+        {
+            _gameplayService.StartGameplay();
+            _sceneFlowService.GoToGamePlayScene(SceneTransitionType.FadeInOut);
+        }
+        public void OpenSettingsPopup()
+        {
+            _popupFlowService.OpenSettings();
+        }
+        public async void OpenExitConfirmationPopup()
+        {
+            var result = await _popupFlowService.OpenConfirmQuit();
+            if (result == QuestionResult.Ok)
+            {
+#if UNITY_EDITOR
+                EditorApplication.isPlaying = false;
+#else
+                Application.Quit();
+#endif
+            }
+        }
+    }
+}

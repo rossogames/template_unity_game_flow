@@ -1,0 +1,9 @@
+using Rossoforge.Core.Events;
+
+namespace RossoGames.Gameplay.Events
+{
+    public readonly struct GameplayRollDiceStartedEvent : IEvent
+    {
+
+    }
+}

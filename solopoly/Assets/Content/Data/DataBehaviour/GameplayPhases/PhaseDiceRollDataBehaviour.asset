@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a33655c3f389ce45a31fab3b4ffc23c, type: 3}
+  m_Name: PhaseDiceRollDataBehaviour
+  m_EditorClassIdentifier: Game::RossoGames.Gameplay.DataBehaviour.PhaseDicesDataBehaviour
+  <AllowPause>k__BackingField: 1
+  <AllowCameraMove>k__BackingField: 0
+  <AllowCameraRotate>k__BackingField: 0
+  <AllowCameraZoom>k__BackingField: 0
+  <DiceValueRange>k__BackingField:
+    <Min>k__BackingField: 1
+    <Max>k__BackingField: 6

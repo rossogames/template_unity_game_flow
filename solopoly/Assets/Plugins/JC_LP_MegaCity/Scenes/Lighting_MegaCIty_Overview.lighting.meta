@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1b931962b407e9f46874f2eba383d2b5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 325049
+  packageName: Low Poly Mega City
+  packageVersion: 1.04
+  assetPath: Assets/Plugins/JC_LP_MegaCity/Scenes/Lighting_MegaCIty_Overview.lighting
+  uploadId: 910864
