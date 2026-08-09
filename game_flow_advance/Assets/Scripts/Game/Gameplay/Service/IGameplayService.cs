@@ -12,6 +12,5 @@ namespace RossoGames.Gameplay.Service
         Awaitable<bool> TransitionToPhaseStandBy();
 
         void StartGameplay();
-        void FinishGameplay();
     }
 }

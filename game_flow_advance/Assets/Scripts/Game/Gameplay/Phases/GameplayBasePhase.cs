@@ -46,19 +46,14 @@ namespace RossoGames.Gameplay.Phases
         public virtual void Update()
         {
         }
+
         //--GAMEPLAY--
-        public virtual void OnEventInvoked(GameplayUnloadSceneActivedEvent eventArg)
-        {
-        }
         public virtual void OnEventInvoked(GameplayFinishEvent eventArg)
         {
         }
 
         //--LEVEL--
         public virtual void OnEventInvoked(LevelLoadedEvent eventArg)
-        {
-        }
-        public virtual void OnEventInvoked(LevelUnloadedEvent eventArg)
         {
         }
     }

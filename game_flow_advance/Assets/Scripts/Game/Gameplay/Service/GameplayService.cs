@@ -15,11 +15,9 @@ namespace RossoGames.Gameplay.Service
         //--INPUTS--
         IEventListener<CancelInputPressedEvent>,
         //--GAMEPLAY--
-        IEventListener<GameplayUnloadSceneActivedEvent>,
         IEventListener<GameplayFinishEvent>,
         //--LEVEL--
-        IEventListener<LevelLoadedEvent>,
-        IEventListener<LevelUnloadedEvent>
+        IEventListener<LevelLoadedEvent>
     {
         private IEventService _eventService;
         private IPopupFlowService _popupFlowService;
@@ -68,17 +66,7 @@ namespace RossoGames.Gameplay.Service
         {
             RegisterEvents();
             await _stateMachine.TransitionTo(_stateMachine.PhaseLevelLoad);
-            _sceneFlowService.GoToGamePlayScene();
-        }
-        public void FinishGameplay()
-        {
-            _sceneFlowService.UnloadGameplayScene();
-            _sceneFlowService.LoadMainScene();
-            _timeFlowService.ResumeTimeFlow();
-
-            _eventService.Raise<GameplayFinishEvent>();
-
-            UnregisterEvents();
+            await _sceneFlowService.GoToGamePlayScene();
         }
 
         //--INPUTS--
@@ -97,34 +85,28 @@ namespace RossoGames.Gameplay.Service
         }
 
         //--GAMEPLAY--
-        public void OnEventInvoked(GameplayUnloadSceneActivedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
         public void OnEventInvoked(GameplayFinishEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
 
         //--LEVEL--
         public void OnEventInvoked(LevelLoadedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-        public void OnEventInvoked(LevelUnloadedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
 
         private void RegisterEvents()
         {
             //--INPUTS--
             _eventService.RegisterListener<CancelInputPressedEvent>(this);
             //--GAMEPLAY--
-            _eventService.RegisterListener<GameplayUnloadSceneActivedEvent>(this);
             _eventService.RegisterListener<GameplayFinishEvent>(this);
             //--LEVEL--
             _eventService.RegisterListener<LevelLoadedEvent>(this);
-            _eventService.RegisterListener<LevelUnloadedEvent>(this);
         }
         private void UnregisterEvents()
         {
             //--INPUTS--
             _eventService.UnregisterListener<CancelInputPressedEvent>(this);
             //--GAMEPLAY--
-            _eventService.UnregisterListener<GameplayUnloadSceneActivedEvent>(this);
             _eventService.UnregisterListener<GameplayFinishEvent>(this);
             //--LEVEL--
             _eventService.UnregisterListener<LevelLoadedEvent>(this);
-            _eventService.UnregisterListener<LevelUnloadedEvent>(this);
         }
         private bool CanInvokenInputEvent()
         {
@@ -140,14 +122,9 @@ namespace RossoGames.Gameplay.Service
             var popupData = await _popupFlowService.OpenPause();
 
             if (popupData.ReturnToMain)
-                UnloadGameplay();
+                await _stateMachine.TransitionTo(_stateMachine.PhaseLevelUnload);
             else
                 _timeFlowService.ResumeTimeFlow();
-        }
-        private async void UnloadGameplay()
-        {
-            await _stateMachine.TransitionTo(_stateMachine.PhaseLevelUnload);
-            _sceneFlowService.LoadGameplayUnloadScene(); // blackout the screen while the level is unloading
         }
     }
 }

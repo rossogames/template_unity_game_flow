@@ -46,8 +46,6 @@ namespace RossoGames.Level.Service
 
             _poolService.ForceReturnAll();
             await Awaitable.NextFrameAsync();
-
-            _eventService.Raise(new LevelUnloadedEvent(ServiceData.CurrentLevelDataAsset));
         }
     }
 }

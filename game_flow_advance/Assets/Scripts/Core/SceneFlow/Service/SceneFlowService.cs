@@ -3,8 +3,9 @@ using Rossoforge.Core.Services;
 using Rossoforge.Scenes.Data;
 using Rossoforge.Services;
 using Rossoforge.Utils.Logger;
+using System;
 using System.Collections.Generic;
-using UnityEngine.SceneManagement;
+using UnityEngine;
 
 namespace RossoGames.SceneFlow.Service
 {
@@ -31,41 +32,23 @@ namespace RossoGames.SceneFlow.Service
             InitializeTransitionMapper();
         }
 
-        public void GoToMainScene(SceneTransitionType? transitionType = null)
+        public Awaitable GoToMainScene(SceneTransitionType? transitionType = null, Func<Awaitable> onScreenCoveredAsync = null)
         {
-            ChangeScene(_serviceData.SceneNames.Main, transitionType);
+            return ChangeScene(_serviceData.SceneNames.Main, transitionType, onScreenCoveredAsync);
         }
-        public void GoToGamePlayScene(SceneTransitionType? transitionType = null)
+        public Awaitable GoToGamePlayScene(SceneTransitionType? transitionType = null)
         {
-            ChangeScene(_serviceData.SceneNames.GamePlay, transitionType);
-        }
-
-        public void LoadGameplayUnloadScene()
-        {
-            _sceneService.LoadScene(_serviceData.SceneNames.GamePlayUnload, LoadSceneMode.Additive);
-        }
-        public void LoadMainScene()
-        {
-            _sceneService.LoadScene(_serviceData.SceneNames.Main, LoadSceneMode.Additive);
+            return ChangeScene(_serviceData.SceneNames.GamePlay, transitionType);
         }
 
-        public void UnloadGameplayScene()
-        {
-            _sceneService.UnloadScene(_serviceData.SceneNames.GamePlay);
-        }
-        public void UnloadGameplayUnloadScene()
-        {
-            _sceneService.UnloadScene(_serviceData.SceneNames.GamePlayUnload);
-        }
-
-        private void ChangeScene(string sceneName, SceneTransitionType? transitionType = null)
+        private Awaitable ChangeScene(string sceneName, SceneTransitionType? transitionType = null, Func<Awaitable> onScreenCoveredAsync = null)
         {
             SceneTransitionData transitionData = GetTransitionData(transitionType);
 
             if (transitionData != null)
-                _sceneService.ChangeScene(sceneName, transitionData);
+                return _sceneService.ChangeScene(sceneName, transitionData, onScreenCoveredAsync);
             else
-                _sceneService.ChangeScene(sceneName); // use default transition
+                return _sceneService.ChangeScene(sceneName, onScreenCoveredAsync); // use default transition
         }
 
         private void InitializeTransitionMapper()

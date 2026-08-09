@@ -12,7 +12,7 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e59a058903b046fdc8e08808f9b4fc31f9baaecf"
+      "hash": "f3fa3b1dad8e43a39628ffc90ac691f16089e5e7"
     },
     "com.rossogames.rossoforge-events": {
       "version": "https://github.com/rossogames/Rossoforge-Events.git",
@@ -36,11 +36,11 @@
       "hash": "37d71f756f00226ffde26666232cb1b4535b50b4"
     },
     "com.rossogames.rossoforge-scenes": {
-      "version": "https://github.com/rossogames/Rossoforge-Scenes.git",
+      "version": "https://github.com/rossogames/Rossoforge-Scenes.git#dev",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "4411dd61f9560555d4c7218adc3cb403b4e0159d"
+      "hash": "3147c02abdcd387c89b594b8555536576cf4c333"
     },
     "com.rossogames.rossoforge-services": {
       "version": "https://github.com/rossogames/Rossoforge-Services.git",

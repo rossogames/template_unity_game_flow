@@ -5,7 +5,7 @@
     "com.rossogames.rossoforge-events": "https://github.com/rossogames/Rossoforge-Events.git",
     "com.rossogames.rossoforge-extensions": "https://github.com/rossogames/Rossoforge-Extensions.git",
     "com.rossogames.rossoforge-pool": "https://github.com/rossogames/Rossoforge-Pool.git",
-    "com.rossogames.rossoforge-scenes": "https://github.com/rossogames/Rossoforge-Scenes.git",
+    "com.rossogames.rossoforge-scenes": "https://github.com/rossogames/Rossoforge-Scenes.git#dev",
     "com.rossogames.rossoforge-services": "https://github.com/rossogames/Rossoforge-Services.git",
     "com.rossogames.rossoforge-time-flow": "https://github.com/rossogames/Rossoforge-TimeFlow.git",
     "com.rossogames.rossoforge-toolbar": "https://github.com/rossogames/RossoForge-Toolbar.git",

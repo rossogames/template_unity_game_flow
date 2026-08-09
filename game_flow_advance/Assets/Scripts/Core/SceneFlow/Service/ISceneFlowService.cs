@@ -1,17 +1,12 @@
 using Rossoforge.Core.Services;
+using System;
+using UnityEngine;
 
 namespace RossoGames.SceneFlow.Service
 {
     public interface ISceneFlowService : IService
     {
-        void GoToMainScene(SceneTransitionType? transitionType = null);
-        void GoToGamePlayScene(SceneTransitionType? transitionType = null);
-
-        void LoadGameplayUnloadScene();
-        void LoadMainScene();
-
-
-        void UnloadGameplayScene();
-        void UnloadGameplayUnloadScene();
+        Awaitable GoToMainScene(SceneTransitionType? transitionType = null, Func<Awaitable> onScreenCoveredAsync = null);
+        Awaitable GoToGamePlayScene(SceneTransitionType? transitionType = null);
     }
 }
