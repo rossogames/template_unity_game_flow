@@ -2,7 +2,6 @@ using Rossoforge.Core.Events;
 using Rossoforge.Services;
 using Rossoforge.Utils.StateMachine;
 using RossoGames.Cameras.Service;
-using RossoGames.Cards.Events;
 using RossoGames.Currencies.Service;
 using RossoGames.Gameplay.DataBehaviour;
 using RossoGames.Gameplay.Events;
@@ -10,7 +9,6 @@ using RossoGames.Gameplay.Service;
 using RossoGames.Inputs.Service;
 using RossoGames.Level.Events;
 using RossoGames.Level.Service;
-using UnityEngine;
 
 namespace RossoGames.Gameplay.Phases
 {
@@ -48,37 +46,11 @@ namespace RossoGames.Gameplay.Phases
         public virtual void Update()
         {
         }
-
-        //--INPUTS--
-        //public virtual void OnEventInvoked(CursorDragEvent eventArg)
-        //{
-        //    if (eventArg.DragButtons.HasFlag(CursorButton.Middle))
-        //        MoveCamera(eventArg.ScreenDisplacement);
-        //
-        //    if (eventArg.DragButtons.HasFlag(CursorButton.Right))
-        //        RotateCamera(eventArg.ScreenDisplacement);
-        //}
-
         //--GAMEPLAY--
         public virtual void OnEventInvoked(GameplayUnloadSceneActivedEvent eventArg)
         {
         }
         public virtual void OnEventInvoked(GameplayFinishEvent eventArg)
-        {
-        }
-        public virtual void OnEventInvoked(GameplayRollDiceStartedEvent eventArg)
-        {
-        }
-        public virtual void OnEventInvoked(GameplayRollDiceEndedEvent eventArg)
-        {
-        }
-        public virtual void OnEventInvoked(GameplayTokenLandedEvent eventArg)
-        {
-        }
-        public virtual void OnEventInvoked(BuildingCardClickedEvent eventArg)
-        {
-        }
-        public virtual void OnEventInvoked(GameplayCardSelectionSkippedEvent eventArg)
         {
         }
 
@@ -88,27 +60,6 @@ namespace RossoGames.Gameplay.Phases
         }
         public virtual void OnEventInvoked(LevelUnloadedEvent eventArg)
         {
-        }
-
-        private void RotateCamera(Vector2 screenDisplacement)
-        {
-            if (!DataBehaviour.AllowCameraRotate)
-                return;
-
-            _cameraService.RotateCamera(screenDisplacement.x, _cameraService.CenterPosition);
-        }
-        private void MoveCamera(Vector2 screenDisplacement)
-        {
-            if (DataBehaviour.AllowCameraMove)
-            {
-                var displacement = new Vector3(screenDisplacement.x, 0, screenDisplacement.y);
-                _cameraService.MoveCamera(displacement);
-            }
-        }
-        private void ZoomCamera(float scrollValue)
-        {
-            if (DataBehaviour.AllowCameraZoom)
-                _cameraService.ZoomCamera(scrollValue);
         }
     }
 }

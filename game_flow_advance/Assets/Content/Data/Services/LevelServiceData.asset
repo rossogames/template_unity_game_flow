@@ -12,7 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b189f7da64fe324c93b9698a5f80c15, type: 3}
   m_Name: LevelServiceData
   m_EditorClassIdentifier: RossoGames::RossoGames.Level.Service.LevelServiceData
-  <BuildingCollectionDataAsset>k__BackingField: {fileID: 11400000, guid: dd692e0ab6225dd429273bbb53707aeb, type: 2}
-  <CurrentLevelDataAsset>k__BackingField: {fileID: 11400000, guid: 72b1dc6f64f60e0489930f487829f4d9, type: 2}
-  <PlayerTokenAssetReference>k__BackingField: {fileID: 2921000766632749345, guid: 15510d306897ce444ac45374f77c4d71, type: 3}
-  <BuildingCardAssetReference>k__BackingField: {fileID: 11400000, guid: d727082ed1de78b488af27ad8e5a370f, type: 2}
+  <CurrentLevelDataAsset>k__BackingField: {fileID: 11400000, guid: 08ee914118eabed45b684e3749de82f0, type: 2}

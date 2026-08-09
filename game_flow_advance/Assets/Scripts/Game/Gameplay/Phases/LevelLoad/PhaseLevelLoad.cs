@@ -1,5 +1,6 @@
 using RossoGames.Gameplay.DataBehaviour;
 using RossoGames.Level.Events;
+using UnityEngine;
 
 namespace RossoGames.Gameplay.Phases.LevelLoad
 {
@@ -14,7 +15,7 @@ namespace RossoGames.Gameplay.Phases.LevelLoad
             base.OnEventInvoked(eventArg);
             SetInitialCurrencyAmount();
 
-            _ = _gameplayService.TransitionToPhaseDiceRoll();
+            Debug.LogWarning($"PhaseLevelLoad: Level {eventArg.LevelDataAsset.name} loaded");
         }
 
         private void SetInitialCurrencyAmount()

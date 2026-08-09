@@ -1,9 +1,6 @@
 using Rossoforge.Core.Events;
 using Rossoforge.Core.TimeFlow;
 using Rossoforge.Services;
-using RossoGames.Buildings.DataAssets;
-using RossoGames.Buildings.DataEntities;
-using RossoGames.Cards.Events;
 using RossoGames.Gameplay.Events;
 using RossoGames.Inputs.Events;
 using RossoGames.Level.Events;
@@ -20,11 +17,6 @@ namespace RossoGames.Gameplay.Service
         //--GAMEPLAY--
         IEventListener<GameplayUnloadSceneActivedEvent>,
         IEventListener<GameplayFinishEvent>,
-        IEventListener<GameplayRollDiceStartedEvent>,
-        IEventListener<GameplayRollDiceEndedEvent>,
-        IEventListener<GameplayTokenLandedEvent>,
-        IEventListener<BuildingCardClickedEvent>,
-        IEventListener<GameplayCardSelectionSkippedEvent>,
         //--LEVEL--
         IEventListener<LevelLoadedEvent>,
         IEventListener<LevelUnloadedEvent>
@@ -70,32 +62,6 @@ namespace RossoGames.Gameplay.Service
         {
             return _stateMachine.TransitionTo(_stateMachine.PhaseStandBy);
         }
-        public Awaitable<bool> TransitionToPhaseDiceRoll()
-        {
-            return _stateMachine.TransitionTo(_stateMachine.PhaseDices);
-        }
-        public Awaitable<bool> TransitionToPhaseTokenMovement()
-        {
-            return _stateMachine.TransitionTo(_stateMachine.PhaseTokenMovement);
-        }
-        public Awaitable<bool> TransitionToPhaseTransportSelection()
-        {
-            return _stateMachine.TransitionTo(_stateMachine.PhaseTransportSelection);
-        }
-        public Awaitable<bool> TransitionToPhaseCardSelection()
-        {
-            return _stateMachine.TransitionTo(_stateMachine.PhaseCardSelection);
-        }
-        public Awaitable<bool> TransitionToPhasePhaseBuilding()
-        {
-            return _stateMachine.TransitionTo(_stateMachine.PhasePhaseBuilding);
-        }
-
-        // --INITIALIZE PHASES--
-        public void InitializePhaseBuilding(BuildingDataEntity dataEntity)
-        {
-            _stateMachine.PhasePhaseBuilding.Initialize(dataEntity);
-        }
 
         //--GAME FLOW--
         public async void StartGameplay()
@@ -133,11 +99,6 @@ namespace RossoGames.Gameplay.Service
         //--GAMEPLAY--
         public void OnEventInvoked(GameplayUnloadSceneActivedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
         public void OnEventInvoked(GameplayFinishEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-        public void OnEventInvoked(GameplayRollDiceStartedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-        public void OnEventInvoked(GameplayRollDiceEndedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-        public void OnEventInvoked(GameplayTokenLandedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-        public void OnEventInvoked(BuildingCardClickedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
-        public void OnEventInvoked(GameplayCardSelectionSkippedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
 
         //--LEVEL--
         public void OnEventInvoked(LevelLoadedEvent eventArg) => _stateMachine.CurrentState.OnEventInvoked(eventArg);
@@ -150,11 +111,6 @@ namespace RossoGames.Gameplay.Service
             //--GAMEPLAY--
             _eventService.RegisterListener<GameplayUnloadSceneActivedEvent>(this);
             _eventService.RegisterListener<GameplayFinishEvent>(this);
-            _eventService.RegisterListener<GameplayRollDiceStartedEvent>(this);
-            _eventService.RegisterListener<GameplayRollDiceEndedEvent>(this);
-            _eventService.RegisterListener<GameplayTokenLandedEvent>(this);
-            _eventService.RegisterListener<BuildingCardClickedEvent>(this);
-            _eventService.RegisterListener<GameplayCardSelectionSkippedEvent>(this);
             //--LEVEL--
             _eventService.RegisterListener<LevelLoadedEvent>(this);
             _eventService.RegisterListener<LevelUnloadedEvent>(this);
@@ -166,11 +122,6 @@ namespace RossoGames.Gameplay.Service
             //--GAMEPLAY--
             _eventService.UnregisterListener<GameplayUnloadSceneActivedEvent>(this);
             _eventService.UnregisterListener<GameplayFinishEvent>(this);
-            _eventService.UnregisterListener<GameplayRollDiceStartedEvent>(this);
-            _eventService.UnregisterListener<GameplayRollDiceEndedEvent>(this);
-            _eventService.UnregisterListener<GameplayTokenLandedEvent>(this);
-            _eventService.UnregisterListener<BuildingCardClickedEvent>(this);
-            _eventService.UnregisterListener<GameplayCardSelectionSkippedEvent>(this);
             //--LEVEL--
             _eventService.UnregisterListener<LevelLoadedEvent>(this);
             _eventService.UnregisterListener<LevelUnloadedEvent>(this);

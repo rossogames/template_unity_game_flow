@@ -27,30 +27,5 @@ namespace RossoGames.Gameplay.Service
         [field: BoxGroup("Phase Data Behaviour")]
         [field: LabelText("Level Unload")]
         public PhaseLevelUnloadDataBehaviour LevelUnloadDataBehaviour { get; private set; }
-
-        [field: SerializeField]
-        [field: BoxGroup("Phase Data Behaviour")]
-        [field: LabelText("Dices")]
-        public PhaseDiceRollDataBehaviour DicesDataBehaviour { get; private set; }
-
-        [field: SerializeField]
-        [field: BoxGroup("Phase Data Behaviour")]
-        [field: LabelText("Token Movement")]
-        public PhaseTokenMovementDataBehaviour TokenMovementDataBehaviour { get; private set; }
-
-        [field: SerializeField]
-        [field: BoxGroup("Phase Data Behaviour")]
-        [field: LabelText("Transport Selection")]
-        public PhaseTransportSelectionDataBehaviour TransportSelectionDataBehaviour { get; private set; }
-
-        [field: SerializeField]
-        [field: BoxGroup("Phase Data Behaviour")]
-        [field: LabelText("Card Selection")]
-        public PhaseCardSelectionDataBehaviour CardSelectionDataBehaviour { get; private set; }
-
-        [field: SerializeField]
-        [field: BoxGroup("Phase Data Behaviour")]
-        [field: LabelText("Building")]
-        public PhaseBuildingDataBehaviour BuildingDataBehaviour { get; private set; }
     }
 }

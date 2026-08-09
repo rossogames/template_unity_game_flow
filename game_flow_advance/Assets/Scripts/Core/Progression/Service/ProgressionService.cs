@@ -19,8 +19,6 @@ namespace RossoGames.Progression.Service
         {
             _userDataService = ServiceLocator.Get<IUserDataService<SaveData>>();
             _userDataService.Load();
-
-            InitializeSaveData();
         }
 
         public string[] GetUnlockedBuildings()
@@ -33,18 +31,6 @@ namespace RossoGames.Progression.Service
             var currentSave = _userDataService.CurrentSave;
             currentSave.Version = 1;
             _userDataService.Save();
-        }
-
-        private void InitializeSaveData()
-        {
-            var currentSave = _userDataService.CurrentSave;
-            if (currentSave.Initialized)
-                return;
-
-            foreach (var card in _serviceData.StarterBuildings)
-                currentSave.UnlockedBuildings.Add(card.name);
-
-            currentSave.Initialized = true;
         }
     }
 }

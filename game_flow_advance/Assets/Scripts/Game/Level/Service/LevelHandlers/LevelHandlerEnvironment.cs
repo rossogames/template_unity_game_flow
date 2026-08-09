@@ -18,12 +18,14 @@ namespace RossoGames.Level.Service
 
         private void Instantiate()
         {
+            /*
             var obj = GameObject.Instantiate(_serviceData.CurrentLevelDataAsset.EnvironmentAssetReference, _root);
             obj.transform.rotation = Quaternion.identity;
 
             var w = (float)_serviceData.CurrentLevelDataAsset.Size.Width;
             var h = (float)_serviceData.CurrentLevelDataAsset.Size.Height;
             obj.transform.position = new Vector3((w + 2) / 2, 0, (h + 2) / 2);
+            */
         }
     }
 }

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e89e5383211c8cf419f8992b52475fe4, type: 3}
-  m_Name: LevelDataAsset_test_6x4
+  m_Name: LevelDataAsset_test
   m_EditorClassIdentifier: RossoGames::RossoGames.Level.DataAsset.LevelDataAsset
   <CameraZoom>k__BackingField: 4
   <Size>k__BackingField:
-    <Width>k__BackingField: 6
-    <Height>k__BackingField: 4
-  <EnvironmentAssetReference>k__BackingField: {fileID: 3665947976677399629, guid: 6431992df1a71b443b92c3fb10320f60, type: 3}
+    <Width>k__BackingField: 4
+    <Height>k__BackingField: 6
+  <EnvironmentAssetReference>k__BackingField: {fileID: 1295908093406251508, guid: 44f3854f62ea5b140851bc49c54c6600, type: 3}
   <BuildableTiles>k__BackingField:
     Items:
     - Item: {fileID: 11400000, guid: c1f9f6af76ec641439e6e664f4192985, type: 2}
