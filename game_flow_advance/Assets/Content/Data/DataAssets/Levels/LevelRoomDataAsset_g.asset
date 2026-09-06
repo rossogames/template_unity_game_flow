@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59583d7ef5ab76d43a7b166ca36edff6, type: 3}
+  m_Name: LevelRoomDataAsset_g
+  m_EditorClassIdentifier: Game::RossoGames.Level.DataAssets.LevelRoomDataAsset
+  <AssetReference>k__BackingField: {fileID: 11400000, guid: fb55f33d0680265479963b749b9ecf8b, type: 2}
+  <Position>k__BackingField: {x: -5, y: 0, z: -3}
+  <Rotation>k__BackingField: {x: 0, y: 0, z: 0}
+  <NextRoom>k__BackingField:
+  - {fileID: 11400000, guid: 2aee2cdcef7b6d64eb57f278e0fd49d7, type: 2}
+  - {fileID: 11400000, guid: b0eec77c80171ec4ea28cbfcb335dbe1, type: 2}
+  - {fileID: 11400000, guid: 9207dd4e0bb188644819e40dffa09868, type: 2}
+  - {fileID: 11400000, guid: 8473d9a18d747cd40b695155fc0b03ed, type: 2}
+  - {fileID: 11400000, guid: 531a0958801611648a2f336ec5eaed36, type: 2}
+  - {fileID: 11400000, guid: cbecdb30554aaec42b5a7d70968c9503, type: 2}

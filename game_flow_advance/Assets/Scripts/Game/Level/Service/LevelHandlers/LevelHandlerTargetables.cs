@@ -9,7 +9,7 @@ namespace RossoGames.Level.Service
     {
         private Targetable _currentTarget;
 
-        public LevelHandlerTargetables(LevelServiceData serviceData) : base(serviceData)
+        public LevelHandlerTargetables(LevelDataService serviceData) : base(serviceData)
         {
         }
         public override void Dispose()

@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e89e5383211c8cf419f8992b52475fe4, type: 3}
+  m_Name: LevelDataAsset_test
+  m_EditorClassIdentifier: RossoGames::RossoGames.Level.DataAsset.LevelDataAsset
+  <CameraZoom>k__BackingField: 4
+  <Size>k__BackingField:
+    <Width>k__BackingField: 4
+    <Height>k__BackingField: 6
+  <EnvironmentAssetReference>k__BackingField: {fileID: 1295908093406251508, guid: 44f3854f62ea5b140851bc49c54c6600, type: 3}
+  <BuildableTiles>k__BackingField:
+    Items:
+    - Item: {fileID: 11400000, guid: c1f9f6af76ec641439e6e664f4192985, type: 2}
+      Weight: 50
+    - Item: {fileID: 11400000, guid: a1e941b45a5b46145839d9d6f77f1f4d, type: 2}
+      Weight: 30
+    - Item: {fileID: 11400000, guid: fbc6b4e66a321ff4fb395dd619af4b75, type: 2}
+      Weight: 15
+    - Item: {fileID: 11400000, guid: 556db36e1804ed24d84ca7631074a87a, type: 2}
+      Weight: 5
+  <TransportTiles>k__BackingField:
+    Items:
+    - Item: {fileID: 11400000, guid: 7429fb2dbe1422b4ca4bb9bc7b64ae51, type: 2}
+      Weight: 50
+    - Item: {fileID: 11400000, guid: ee5f96a7397f7664a896297aa6b3a75b, type: 2}
+      Weight: 50

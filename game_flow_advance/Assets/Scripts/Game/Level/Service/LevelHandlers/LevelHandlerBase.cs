@@ -1,6 +1,3 @@
-using Rossoforge.Core.Events;
-using Rossoforge.Core.Pool;
-using Rossoforge.Services;
 using RossoGames.Raycast.Service;
 using System;
 using UnityEngine;
@@ -14,9 +11,9 @@ namespace RossoGames.Level.Service
         protected readonly ILevelService _levelService;
         protected readonly IPoolService _poolService;
 
-        protected LevelServiceData _serviceData { get; private set; }
+        protected LevelDataService _serviceData { get; private set; }
 
-        public LevelHandlerBase(LevelServiceData serviceData)
+        public LevelHandlerBase(LevelDataService serviceData)
         {
             _serviceData = serviceData;
 

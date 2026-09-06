@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a879e967000cb4dac9be8f465d20bb, type: 3}
   m_Name: PhaseLevelUnloadDataBehaviour
   m_EditorClassIdentifier: RossoGames::RossoGames.Gameplay.DataBehaviour.PhaseLevelUnloadDataBehaviour
-  <AllowCameraMove>k__BackingField: 0
-  <AllowCameraRotate>k__BackingField: 0
-  <AllowCameraZoom>k__BackingField: 0
-  <HudItemsVisible>k__BackingField: 0
-  <HudItemsEnabled>k__BackingField: 0
+  <AllowPause>k__BackingField: 0
+  <AllowMove>k__BackingField: 0
+  <AllowRotate>k__BackingField: 0

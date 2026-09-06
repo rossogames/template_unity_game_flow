@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59583d7ef5ab76d43a7b166ca36edff6, type: 3}
+  m_Name: LevelRoomDataAsset_d
+  m_EditorClassIdentifier: Game::RossoGames.Level.DataAssets.LevelRoomDataAsset
+  <AssetReference>k__BackingField: {fileID: 11400000, guid: 43e537b11044ce647956a706a9f6dff9, type: 2}
+  <Position>k__BackingField: {x: -40, y: 0, z: -10}
+  <Rotation>k__BackingField: {x: 0, y: 0, z: 0}
+  <NextRoom>k__BackingField:
+  - {fileID: 11400000, guid: 72a99cb0c97dacf498ad35880ee2c6ad, type: 2}
+  - {fileID: 11400000, guid: 049173649b496cf45a50ad81d3cdbb15, type: 2}

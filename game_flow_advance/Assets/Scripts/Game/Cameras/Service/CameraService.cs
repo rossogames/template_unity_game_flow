@@ -1,4 +1,3 @@
-using Rossoforge.Core.DataStructures;
 using UnityEngine;
 
 namespace RossoGames.Cameras.Service
@@ -9,13 +8,13 @@ namespace RossoGames.Cameras.Service
         private Transform _cameraRoot;
         private float _maxMovementRad;
 
-        private CameraServiceData _serviceData;
+        private CameraDataService _serviceData;
 
         public Camera Camera => _camera;
         public Vector3 CameraRootPosition => _cameraRoot.position;
         public Vector3 CenterPosition { get; private set; }
 
-        public CameraService(CameraServiceData serviceData)
+        public CameraService(CameraDataService serviceData)
         {
             _serviceData = serviceData;
         }

@@ -5,98 +5,98 @@
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "5b76d0e79487b6fe8da0e7c1d6596f8fff436e6f"
+      "hash": "5eb23b3796405d64ac5ce88dc47eb8e3573fed49"
     },
-    "com.rossogames.rossoforge-core": {
-      "version": "https://github.com/rossogames/Rossoforge-Core.git#dev",
+    "com.rossogames.rossoforge-controls": {
+      "version": "https://github.com/rossogames/Rossoforge-Controls.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "f3fa3b1dad8e43a39628ffc90ac691f16089e5e7"
+      "hash": "f38e88dcea394575420d14c7d1ae7e1ddbe424f6"
+    },
+    "com.rossogames.rossoforge-core": {
+      "version": "https://github.com/rossogames/Rossoforge-Core.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "9740f6d983b00629e9e8877f477b7cb9340c093f"
     },
     "com.rossogames.rossoforge-events": {
       "version": "https://github.com/rossogames/Rossoforge-Events.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "3598e290c577c7da110034e1e46aeac1d8e76f1e"
+      "hash": "7e678efeffebdcbce6c90e87b22cd396741f19e6"
     },
     "com.rossogames.rossoforge-extensions": {
       "version": "https://github.com/rossogames/Rossoforge-Extensions.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "96992cc1fae54c03cb0e33436e81f47f72005a7c"
+      "hash": "426519df363f7c9672643b58ecc4c80d1df67d5a"
+    },
+    "com.rossogames.rossoforge-persistence": {
+      "version": "https://github.com/rossogames/Rossoforge-Persistence.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "ac80e9983fd3d7816a51b314dad30919d422d99a"
     },
     "com.rossogames.rossoforge-pool": {
       "version": "https://github.com/rossogames/Rossoforge-Pool.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "37d71f756f00226ffde26666232cb1b4535b50b4"
+      "hash": "3a6f66e02e6196def395033e5ad6ab7d899dcf00"
     },
-    "com.rossogames.rossoforge-scenes": {
-      "version": "https://github.com/rossogames/Rossoforge-Scenes.git#dev",
+    "com.rossogames.rossoforge-popups": {
+      "version": "https://github.com/rossogames/Rossoforge-Popups.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "3147c02abdcd387c89b594b8555536576cf4c333"
+      "hash": "bf410862aa1853030acc5a9f8902fd2f1cc37bd0"
+    },
+    "com.rossogames.rossoforge-scenes": {
+      "version": "https://github.com/rossogames/Rossoforge-Scenes.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "f02a4ce8059f232877048855179f7f4de1a6066a"
+    },
+    "com.rossogames.rossoforge-screens": {
+      "version": "https://github.com/rossogames/Rossoforge-Screens.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "8fc3b8a624e08dbbf70dd3b197e6688d0712964c"
     },
     "com.rossogames.rossoforge-services": {
       "version": "https://github.com/rossogames/Rossoforge-Services.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "7875de519f1c138b24fcecad662c5d2e8a41ef3b"
+      "hash": "de11b901c09e15e29c7a765b9d7a3aef3ccf1adb"
     },
     "com.rossogames.rossoforge-time-flow": {
       "version": "https://github.com/rossogames/Rossoforge-TimeFlow.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e7d521ba95a0f9d71ecf410b21db6af6717f41f7"
+      "hash": "7bc90e3fade3dc6328bd71438412a2b1ff921252"
     },
     "com.rossogames.rossoforge-toolbar": {
       "version": "https://github.com/rossogames/RossoForge-Toolbar.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "e41c097ed0da0f141063096315e07f6808518719"
-    },
-    "com.rossogames.rossoforge-ui-controls": {
-      "version": "https://github.com/rossogames/Rossoforge-UI-Controls.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "956eff15d0ad57a261d70265bcf67ed5d26fa237"
-    },
-    "com.rossogames.rossoforge-ui-popups": {
-      "version": "https://github.com/rossogames/Rossoforge-UI-Popups.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "bdfec4e4cfe4db00a78201add453f64243711202"
-    },
-    "com.rossogames.rossoforge-ui-screens": {
-      "version": "https://github.com/rossogames/Rossoforge-UI-Screens.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "bec39c404e18d36bfb4160427e3ee0c0b6b2226e"
-    },
-    "com.rossogames.rossoforge-user-data": {
-      "version": "https://github.com/rossogames/Rossoforge-UserData.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "24812b37e187d25e73ac6b80d9cc3f7b107542b7"
+      "hash": "cecca33f9becafcae3350c19ec2d93b453f73d19"
     },
     "com.rossogames.rossoforge-utils": {
       "version": "https://github.com/rossogames/Rossoforge-Utils.git",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "d1a30bbf01c12a85d8c2d806f9f22b564640cbfa"
+      "hash": "d162fd3931bd1266b0385f7b81c8e1ef898057bc"
     },
     "com.unity.2d.animation": {
       "version": "13.0.4",
@@ -303,6 +303,13 @@
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
       "depth": 3,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.nuget.newtonsoft-json": {
+      "version": "3.2.2",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

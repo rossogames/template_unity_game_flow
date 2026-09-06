@@ -1,5 +1,3 @@
-using Rossoforge.Core.UserData;
-using Rossoforge.Services;
 using RossoGames.Progression.Data;
 
 namespace RossoGames.Progression.Service
@@ -8,9 +6,9 @@ namespace RossoGames.Progression.Service
     {
         private IUserDataService<SaveData> _userDataService;
 
-        private ProgressionServiceData _serviceData;
+        private ProgressionDataService _serviceData;
 
-        public ProgressionService(ProgressionServiceData serviceData)
+        public ProgressionService(ProgressionDataService serviceData)
         {
             _serviceData = serviceData;
         }

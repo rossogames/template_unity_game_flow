@@ -1,7 +1,3 @@
-using Rossoforge.Core.Events;
-using Rossoforge.Core.Pool;
-using Rossoforge.Core.Services;
-using Rossoforge.Services;
 using RossoGames.Cameras.Service;
 using RossoGames.Level.DataTypes;
 using RossoGames.Level.Events;
@@ -17,9 +13,9 @@ namespace RossoGames.Level.Service
 
         private LevelHandlerEnvironment _levelHandlerEnvironment;
 
-        public LevelServiceData ServiceData { get; private set; }
+        public LevelDataService ServiceData { get; private set; }
 
-        public LevelService(LevelServiceData serviceData)
+        public LevelService(LevelDataService serviceData)
         {
             ServiceData = serviceData;
         }

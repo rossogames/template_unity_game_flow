@@ -1,4 +1,4 @@
-using Rossoforge.Core.Services;
+using Rossoforge.Services.Service;
 using RossoGames.Currencies.DataEntities;
 using RossoGames.Currencies.DataTypes;
 

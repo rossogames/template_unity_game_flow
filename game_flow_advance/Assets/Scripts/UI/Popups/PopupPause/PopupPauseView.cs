@@ -1,5 +1,5 @@
-using Rossoforge.UI.Controls.Buttons;
-using Rossoforge.UI.Popups.PopupBase;
+using Rossoforge.Controls.Buttons;
+using Rossoforge.Popups.UI;
 
 namespace RossoGames.Popups.PopupPause
 {

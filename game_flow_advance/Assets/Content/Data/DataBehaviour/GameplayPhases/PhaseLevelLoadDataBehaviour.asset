@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee5ac37d089df34d845ed895ceab09c, type: 3}
   m_Name: PhaseLevelLoadDataBehaviour
   m_EditorClassIdentifier: RossoGames::RossoGames.Gameplay.DataBehaviour.PhaseLevelLoadDataBehaviour
-  <AllowPause>k__BackingField: 1
+  <AllowPause>k__BackingField: 0
+  <AllowMove>k__BackingField: 0
+  <AllowRotate>k__BackingField: 0

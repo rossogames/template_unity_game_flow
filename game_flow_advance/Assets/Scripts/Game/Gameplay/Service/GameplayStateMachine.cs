@@ -13,7 +13,7 @@ namespace RossoGames.Gameplay.Service
         public PhaseLevelLoad PhaseLevelLoad { get; private set; }
         public PhaseLevelUnload PhaseLevelUnload { get; private set; }
 
-        public GameplayStateMachine(GameplayServiceData gameplayServiceData)
+        public GameplayStateMachine(GameplayDataService gameplayServiceData)
         {
             PhaseStandBy = new PhaseStandBy(gameplayServiceData.StandByDataBehaviour);
             PhaseLevelLoad = new PhaseLevelLoad(gameplayServiceData.LevelLoadDataBehaviour);

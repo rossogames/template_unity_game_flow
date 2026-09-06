@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e266f59eee756f499c00f074d941c12, type: 3}
+  m_Name: PopupFlowDataService
+  m_EditorClassIdentifier: 
+  <PopupPauseAssetReference>k__BackingField: {fileID: 11400000, guid: 7eb62ff1f9a972e4b9b9b7c4d27b30dc, type: 2}
+  <PopupQuestionAssetReference>k__BackingField: {fileID: 11400000, guid: 6b88f17b163a0204b93e9d1e43a3cee7, type: 2}
+  <PopupSettingsAssetReference>k__BackingField: {fileID: 11400000, guid: f35d30f4fc3a0374d971bf39cf7914c7, type: 2}
+  <PopupContainerAssetReference>k__BackingField: {fileID: 11400000, guid: 271ba0d4cb0bbc24794dd1e6cee14afc, type: 2}
+  <PopupInventoryAssetReference>k__BackingField: {fileID: 11400000, guid: 341d8aa42a4a5d945ac7883e0d0b7e16, type: 2}

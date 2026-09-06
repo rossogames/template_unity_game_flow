@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b0a902aa7b839429faa094fed130c4, type: 3}
+  m_Name: SimpleAudioDataConfig_AutomaticDoorOpens
+  m_EditorClassIdentifier: Rossoforge.Audio::Rossoforge.Audio.Data.SimpleAudioConfigData
+  <Channel>k__BackingField: {fileID: 11400000, guid: 398951984387b0d4aa0881b8bc94a012, type: 2}
+  <Main>k__BackingField:
+    <AudioResource>k__BackingField: {fileID: 8300000, guid: 080a0ef6686aaf84ab59292ea6d22852, type: 3}
+    <Volume>k__BackingField: 1
+    <Pitch>k__BackingField: 1.5
+    <Mute>k__BackingField: 0
+    <Loop>k__BackingField: 0
+    <Autoplay>k__BackingField: 0

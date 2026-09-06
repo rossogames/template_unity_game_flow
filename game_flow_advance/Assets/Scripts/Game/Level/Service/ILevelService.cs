@@ -1,4 +1,4 @@
-using Rossoforge.Core.Services;
+using Rossoforge.Services.Service;
 using RossoGames.Level.DataTypes;
 using UnityEngine;
 
@@ -6,7 +6,7 @@ namespace RossoGames.Level.Service
 {
     public interface ILevelService : IService
     {
-        LevelServiceData ServiceData { get; }
+        LevelDataService ServiceData { get; }
 
         void LoadLevel(LevelRoots levelRoots);
         Awaitable UnloadLevel();

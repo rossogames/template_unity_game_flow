@@ -1,4 +1,3 @@
-using Rossoforge.Core.Events;
 using RossoGames.Gameplay.Phases;
 
 namespace RossoGames.Gameplay.Events

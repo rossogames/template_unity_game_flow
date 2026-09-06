@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6eb461271591fae4c8768f7409b728d1, type: 3}
+  m_Name: CharacterDataBehaviour
+  m_EditorClassIdentifier: Game::Rossogames.Characters.DataBehavior.CharacterDataBehaviour
+  <Outline>k__BackingField: {fileID: 11400000, guid: 1a543e460b9a7f84b94db2407ae3e0ad, type: 2}
+  <MoveSpeed>k__BackingField: 2
+  <SprintSpeed>k__BackingField: 5.335
+  <RotationChangeRate>k__BackingField: 15
+  <SpeedChangeRate>k__BackingField: 10
+  <JumpHeight>k__BackingField: 3
+  <JumpTimeout>k__BackingField: 1.2
+  <Gravity>k__BackingField: -15
+  <FallTimeout>k__BackingField: 0.1
+  <TerminalVelocity>k__BackingField: 30
+  <GroundedOffset>k__BackingField: -0.14
+  <GroundLayers>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1

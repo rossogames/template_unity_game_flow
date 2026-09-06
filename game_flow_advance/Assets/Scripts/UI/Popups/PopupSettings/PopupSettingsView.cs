@@ -1,8 +1,7 @@
-using Rossoforge.Core.UI.Popups;
-using Rossoforge.UI.Controls.Buttons;
-using Rossoforge.UI.Controls.Sliders;
-using Rossoforge.UI.Controls.Switches;
-using Rossoforge.UI.Popups.PopupBase;
+using Rossoforge.Controls.Buttons;
+using Rossoforge.Controls.Sliders;
+using Rossoforge.Controls.Switches;
+using Rossoforge.Popups.UI;
 using UnityEngine;
 using UnityEngine.UI;
 

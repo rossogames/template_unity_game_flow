@@ -1,4 +1,3 @@
-using Rossoforge.Core.Events;
 using RossoGames.Currencies.DataTypes;
 
 namespace RossoGames.Currencies.Events

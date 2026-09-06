@@ -1,6 +1,5 @@
-using Rossoforge.Core.UI.Popups;
-using Rossoforge.Services;
-using Rossoforge.UI.Popups.PopupBase;
+using Rossoforge.Popups.UI;
+using Rossoforge.Services.Locator;
 using RossoGames.Settings.Service;
 
 namespace RossoGames.Popups.PopupSettings

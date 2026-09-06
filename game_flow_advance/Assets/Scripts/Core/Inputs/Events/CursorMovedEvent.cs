@@ -1,4 +1,3 @@
-using Rossoforge.Core.Events;
 using UnityEngine;
 
 namespace RossoGames.Inputs.Events

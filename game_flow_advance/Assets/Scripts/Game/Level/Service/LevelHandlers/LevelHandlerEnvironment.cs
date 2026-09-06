@@ -6,7 +6,7 @@ namespace RossoGames.Level.Service
     {
         private readonly Transform _root;
 
-        public LevelHandlerEnvironment(LevelServiceData serviceData, Transform root) : base(serviceData)
+        public LevelHandlerEnvironment(LevelDataService serviceData, Transform root) : base(serviceData)
         {
             _root = root;
         }

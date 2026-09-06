@@ -1,5 +1,5 @@
-using Rossoforge.Core.DataStructures;
-using Rossoforge.Core.Services;
+using Rossoforge.Common.DataStructures;
+using Rossoforge.Services.Service;
 using UnityEngine;
 
 namespace RossoGames.Cameras.Service

@@ -1,4 +1,4 @@
-using Rossoforge.UI.Controls.Buttons;
+using Rossoforge.Controls.Buttons;
 
 public class PopupPauseButtonContinue : ButtonEventsHandler<PopupPauseButtonContinue>
 {

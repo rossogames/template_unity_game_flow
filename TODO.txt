@@ -1,0 +1,15 @@
+- Separar input Cancel/Pause
+- Agregar evento PauseInputPressedEvent
+- En gameplay service usar PauseInputPressedEvent para poner pausa
+- Dejar evento de cancel solo para popups
+
+- actualizar sound data con AudioSource en remplazo de Audio Clip
+
+- Cambiar name space y path de SO a "Rossogames"
+- Renombrar CameraSeter a Camera controller
+
+- incluir en setting vSync y targetFrameRate
+- Agregar namespaces faltantes a handlers de popup settings (controles de ui)
+
+- Revisar Popup settings esta usando el GUI de popup template
+- Quitar "Popup" de namespace de scripts de popups

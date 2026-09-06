@@ -1,5 +1,3 @@
-using Rossoforge.Core.Audio;
-using Rossoforge.Services;
 using Rossoforge.Utils.IO;
 
 namespace RossoGames.Settings.Service
@@ -13,7 +11,7 @@ namespace RossoGames.Settings.Service
 
         private IAudioService _audioService;
 
-        private SettingsServiceData _serviceData;
+        private SettingsDataService _serviceData;
         private float _musicVolume;
         private float _sfxVolume;
         private bool _sfxEnabled;
@@ -59,7 +57,7 @@ namespace RossoGames.Settings.Service
             }
         }
 
-        public SettingsService(SettingsServiceData serviceData)
+        public SettingsService(SettingsDataService serviceData)
         {
             _serviceData = serviceData;
         }

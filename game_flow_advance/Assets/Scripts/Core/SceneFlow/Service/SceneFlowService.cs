@@ -1,7 +1,3 @@
-using Rossoforge.Core.Scenes;
-using Rossoforge.Core.Services;
-using Rossoforge.Scenes.Data;
-using Rossoforge.Services;
 using Rossoforge.Utils.Logger;
 using System;
 using System.Collections.Generic;
@@ -12,11 +8,11 @@ namespace RossoGames.SceneFlow.Service
     public class SceneFlowService : ISceneFlowService, IInitializable
     {
         private ISceneService _sceneService;
-        private SceneFlowServiceData _serviceData;
+        private SceneFlowDataService _serviceData;
 
         private Dictionary<SceneTransitionType, SceneTransitionData> _transitionsMap = new();
 
-        public SceneFlowService(SceneFlowServiceData serviceData)
+        public SceneFlowService(SceneFlowDataService serviceData)
         {
             _serviceData = serviceData;
         }
@@ -24,7 +20,7 @@ namespace RossoGames.SceneFlow.Service
         {
             if (_serviceData == null)
             {
-                RossoLogger.Error($"{nameof(SceneFlowServiceData)} not assigned");
+                RossoLogger.Error($"{nameof(SceneFlowDataService)} not assigned");
                 return;
             }
 

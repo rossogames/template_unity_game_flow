@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0539796712d501646bb68366d0fd1270, type: 3}
+  m_Name: InteractableDataBehaviour_Crate
+  m_EditorClassIdentifier: Game::Rossogames.LevelObjects.DataBehaviour.InteractableDataBehaviour
+  <InteractableContextActions>k__BackingField:
+  - <ContextAction>k__BackingField: {fileID: 11400000, guid: cd7187702b2cdc549b7b74a71d90f45a, type: 2}
+    <Input>k__BackingField: 0
+  - <ContextAction>k__BackingField: {fileID: 11400000, guid: cdcbe150e3379b54299be1e1e3d67764, type: 2}
+    <Input>k__BackingField: 0
+  - <ContextAction>k__BackingField: {fileID: 11400000, guid: 028c46d61ba099e43b0d8491947642b7, type: 2}
+    <Input>k__BackingField: 2

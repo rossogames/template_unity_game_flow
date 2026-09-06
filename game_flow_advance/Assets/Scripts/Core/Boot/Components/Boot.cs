@@ -1,18 +1,10 @@
-using Rossoforge.Audio.Services;
-using Rossoforge.Core.Audio;
-using Rossoforge.Core.Events;
-using Rossoforge.Core.Pool;
-using Rossoforge.Core.Scenes;
-using Rossoforge.Core.TimeFlow;
-using Rossoforge.Core.UI.Popups;
-using Rossoforge.Core.UserData;
+using Rossoforge.Audio.Service;
 using Rossoforge.Events.Service;
 using Rossoforge.Pool.Service;
+using Rossoforge.Popups.Service;
 using Rossoforge.Scenes.Service;
-using Rossoforge.Services;
+using Rossoforge.Services.Locator;
 using Rossoforge.TimeFlow.Service;
-using Rossoforge.UI.Popups.Service;
-using Rossoforge.UserData.Service;
 using RossoGames.Cameras.Service;
 using RossoGames.Currencies.Service;
 using RossoGames.Gameplay.Service;
@@ -31,19 +23,18 @@ namespace RossoGames.Boot.Components
 {
     public class Boot : MonoBehaviour
     {
-        [SerializeField, BoxGroup("SDK")] private SceneServiceData _sceneServiceData;
-        [SerializeField, BoxGroup("SDK")] private PopupServiceData _popupServiceData;
-        [SerializeField, BoxGroup("SDK")] private AudioServiceData _audioServiceData;
-        [SerializeField, BoxGroup("SDK")] private UserDataServiceData _userDataServiceData;
+        [SerializeField, BoxGroup("SDK")] private SceneDataService _sceneDataService;
+        [SerializeField, BoxGroup("SDK")] private PopupDataService _popupDataService;
+        [SerializeField, BoxGroup("SDK")] private AudioDataService _audioDataService;
 
-        [SerializeField, BoxGroup("Core")] private SettingsServiceData _settingsServiceData;
-        [SerializeField, BoxGroup("Core")] private SceneFlowServiceData _sceneFlowServiceData;
-        [SerializeField, BoxGroup("Core")] private PopupFlowServiceData _popupFlowServiceData;
-        [SerializeField, BoxGroup("Core")] private ProgressionServiceData _progressionServiceData;
+        [SerializeField, BoxGroup("Core")] private SettingsDataService _settingsDataService;
+        [SerializeField, BoxGroup("Core")] private SceneFlowDataService _sceneFlowDataService;
+        [SerializeField, BoxGroup("Core")] private PopupFlowDataService _popupFlowDataService;
+        [SerializeField, BoxGroup("Core")] private ProgressionDataService _progressionDataService;
 
-        [SerializeField, BoxGroup("Game")] private CameraServiceData _cameraServiceData;
-        [SerializeField, BoxGroup("Game")] private GameplayServiceData _gameplayServiceData;
-        [SerializeField, BoxGroup("Game")] private LevelServiceData _levelServiceData;
+        [SerializeField, BoxGroup("Game")] private CameraDataService _cameraDataService;
+        [SerializeField, BoxGroup("Game")] private GameplayDataService _gameplayDataService;
+        [SerializeField, BoxGroup("Game")] private LevelDataService _levelDataService;
 
         private void Awake()
         {
@@ -64,12 +55,11 @@ namespace RossoGames.Boot.Components
         private void RegisterSdkServices()
         {
             var eventService = new EventService();
-            var sceneService = new SceneService(_sceneServiceData);
+            var sceneService = new SceneService(_sceneDataService);
             var poolService = new PoolService();
-            var popupService = new PopupService(_popupServiceData);
-            var audioService = new AudioService(_audioServiceData);
+            var popupService = new PopupService(_popupDataService);
+            var audioService = new AudioService(_audioDataService);
             var timeFlowService = new TimeFlowService();
-            var userDataService = new UserDataService<SaveData>(_userDataServiceData);
 
             ServiceLocator.Register<IEventService>(eventService);
             ServiceLocator.Register<ISceneService>(sceneService);
@@ -77,31 +67,28 @@ namespace RossoGames.Boot.Components
             ServiceLocator.Register<IPopupService>(popupService);
             ServiceLocator.Register<IAudioService>(audioService);
             ServiceLocator.Register<ITimeFlowService>(timeFlowService);
-            ServiceLocator.Register<IUserDataService<SaveData>>(userDataService);
         }
 
         private void RegisterCoreServices()
         {
             var inptuService = new InputsService();
-            var sceneFlowService = new SceneFlowService(_sceneFlowServiceData);
-            var popupFlowService = new PopupFlowService(_popupFlowServiceData);
-            var settingsService = new SettingsService(_settingsServiceData);
-            var raycastService = new RaycastService();
-            var progressionDataService = new ProgressionService(_progressionServiceData);
+            var sceneFlowService = new SceneFlowService(_sceneFlowDataService);
+            var popupFlowService = new PopupFlowService(_popupFlowDataService);
+            var settingsService = new SettingsService(_settingsDataService);
+            var progressionDataService = new ProgressionService(_progressionDataService);
 
             ServiceLocator.Register<IInputsService>(inptuService);
             ServiceLocator.Register<ISceneFlowService>(sceneFlowService);
             ServiceLocator.Register<IPopupFlowService>(popupFlowService);
             ServiceLocator.Register<ISettingsService>(settingsService);
-            ServiceLocator.Register<IRaycastService>(raycastService);
             ServiceLocator.Register<IProgressionService>(progressionDataService);
         }
 
         private void RegisterGameServices()
         {
-            var cameraService = new CameraService(_cameraServiceData);
-            var gameplayService = new GameplayService(_gameplayServiceData);
-            var levelService = new LevelService(_levelServiceData);
+            var cameraService = new CameraService(_cameraDataService);
+            var gameplayService = new GameplayService(_gameplayDataService);
+            var levelService = new LevelService(_levelDataService);
             var currencyService = new CurrencyService();
 
             ServiceLocator.Register<ICameraService>(cameraService);

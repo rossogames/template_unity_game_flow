@@ -1,4 +1,4 @@
-using Rossoforge.Core.Events;
+using Rossoforge.Events.Bus;
 using RossoGames.LevelObjects.Components;
 
 namespace RossoGames.LevelObjects.Events

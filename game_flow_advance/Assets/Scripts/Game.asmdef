@@ -12,11 +12,11 @@
         "Rossoforge.Extensions",
         "Rossoforge.Pool",
         "Rossoforge.Scenes",
-        "Rossoforge.UI.Controls",
-        "Rossoforge.UI.Popups",
-        "Rossoforge.UI.Screens",
+        "Rossoforge.Controls",
+        "Rossoforge.Popups",
+        "Rossoforge.Screens",
         "Rossoforge.Utils",
-        "Rossoforge.UserData"
+        "Rossoforge.Persistence"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

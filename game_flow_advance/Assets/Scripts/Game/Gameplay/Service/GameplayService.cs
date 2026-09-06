@@ -1,6 +1,3 @@
-using Rossoforge.Core.Events;
-using Rossoforge.Core.TimeFlow;
-using Rossoforge.Services;
 using RossoGames.Inputs.Events;
 using RossoGames.Level.Events;
 using RossoGames.PopupFlow.Service;
@@ -21,12 +18,12 @@ namespace RossoGames.Gameplay.Service
         private ISceneFlowService _sceneFlowService;
         private ITimeFlowService _timeFlowService;
 
-        private GameplayServiceData _serviceData;
+        private GameplayDataService _serviceData;
         private GameplayStateMachine _stateMachine;
 
-        public GameplayServiceData ServiceData => _serviceData;
+        public GameplayDataService ServiceData => _serviceData;
 
-        public GameplayService(GameplayServiceData serviceData)
+        public GameplayService(GameplayDataService serviceData)
         {
             _serviceData = serviceData;
         }

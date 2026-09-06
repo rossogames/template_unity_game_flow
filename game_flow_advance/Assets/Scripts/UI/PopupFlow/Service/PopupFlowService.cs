@@ -1,8 +1,10 @@
-using Rossoforge.Core.Events;
-using Rossoforge.Core.Services;
-using Rossoforge.Core.UI.Popups;
-using Rossoforge.Pool.Data;
-using Rossoforge.Services;
+using Rossoforge.Events.Bus;
+using Rossoforge.Events.Service;
+using Rossoforge.Pool.DataConfig;
+using Rossoforge.Popups.Service;
+using Rossoforge.Popups.UI;
+using Rossoforge.Services.Locator;
+using Rossoforge.Services.Service;
 using Rossoforge.Utils.Logger;
 using RossoGames.Inputs.Events;
 using RossoGames.Popups.PopupPause;
@@ -19,11 +21,11 @@ namespace RossoGames.PopupFlow.Service
     {
         private IEventService _eventService;
         private IPopupService _popupService;
-        private PopupFlowServiceData _serviceData;
+        private PopupFlowDataService _serviceData;
 
-        private Dictionary<PopupType, PooledGameobjectData> _popupsMap = new();
+        private Dictionary<PopupType, PooledGameobjectDataConfig> _popupsMap = new();
 
-        public PopupFlowService(PopupFlowServiceData serviceData)
+        public PopupFlowService(PopupFlowDataService serviceData)
         {
             _serviceData = serviceData;
         }
@@ -32,7 +34,7 @@ namespace RossoGames.PopupFlow.Service
         {
             if (_serviceData == null)
             {
-                RossoLogger.Error($"{nameof(PopupFlowServiceData)} not assigned");
+                RossoLogger.Error($"{nameof(PopupFlowDataService)} not assigned");
                 return;
             }
 
@@ -117,11 +119,11 @@ namespace RossoGames.PopupFlow.Service
             return _popupService.OpenPopup<TView>(assetReference, popupData, position, relativeTo);
         }
 
-        private PooledGameobjectData GetPooledPopupReference(PopupType popupType)
+        private PooledGameobjectDataConfig GetPooledPopupReference(PopupType popupType)
         {
-            if (!_popupsMap.TryGetValue(popupType, out PooledGameobjectData assetReference))
+            if (!_popupsMap.TryGetValue(popupType, out PooledGameobjectDataConfig assetReference))
             {
-                RossoLogger.Error($"Popup asset for type '{popupType}' not found. Check {nameof(PopupFlowServiceData)}");
+                RossoLogger.Error($"Popup asset for type '{popupType}' not found. Check {nameof(PopupFlowDataService)}");
                 return null;
             }
 
@@ -134,7 +136,7 @@ namespace RossoGames.PopupFlow.Service
 
             if (_serviceData.Popups == null || _serviceData.Popups.Length == 0)
             {
-                RossoLogger.Warning($"No popups configured in {nameof(PopupFlowServiceData)}");
+                RossoLogger.Warning($"No popups configured in {nameof(PopupFlowDataService)}");
                 return;
             }
 

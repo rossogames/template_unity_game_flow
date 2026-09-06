@@ -1,4 +1,4 @@
-using Rossoforge.UI.Popups.PopupBase;
+using Rossoforge.Popups.UI;
 
 namespace RossoGames.Popups.PopupPause
 {

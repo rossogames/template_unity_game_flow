@@ -1,5 +1,6 @@
-using Rossoforge.Core.Events;
-using Rossoforge.Services;
+using Rossoforge.Events.Bus;
+using Rossoforge.Events.Service;
+using Rossoforge.Services.Locator;
 using RossoGames.LevelObjects.DataBehaviour;
 using RossoGames.LevelObjects.Events;
 using UnityEngine;

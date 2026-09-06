@@ -5,7 +5,7 @@ namespace RossoGames.Level.Service
 {
     public class LevelHandlerClickables : LevelHandlerBase
     {
-        public LevelHandlerClickables(LevelServiceData serviceData) : base(serviceData)
+        public LevelHandlerClickables(LevelDataService serviceData) : base(serviceData)
         {
         }
 
