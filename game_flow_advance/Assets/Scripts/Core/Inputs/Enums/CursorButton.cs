@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RossoGames.Inputs.Enums
+namespace Rossogames.Inputs.Enums
 {
     [Flags]
     public enum CursorButton : byte

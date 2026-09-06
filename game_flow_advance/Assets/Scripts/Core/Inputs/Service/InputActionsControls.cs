@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace RossoGames.Inputs.Service
+namespace Rossogames.Inputs.Service
 {
     /// <summary>
     /// Provides programmatic access to <see cref="InputActionAsset" />, <see cref="InputActionMap" />, <see cref="InputAction" /> and <see cref="InputControlScheme" /> instances defined in asset "Assets/Content/Inputs/InputActionsControls.inputactions".
@@ -95,9 +95,99 @@ namespace RossoGames.Inputs.Service
             ""id"": ""1597f87e-8fd1-4bf4-bbdc-e85e0b72c1aa"",
             ""actions"": [
                 {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""597a74b3-b0ae-4fa7-ac3c-0c07d7f73042"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Cancel"",
                     ""type"": ""Button"",
                     ""id"": ""0f5615dc-bea2-48e2-a693-d2d3e9a420f7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""a6d117e0-9d70-45be-9260-e5823c9e9b8b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Button"",
+                    ""id"": ""bc8a3fdd-a9a0-47d2-a264-fe842918aa33"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""3edd8ec0-077c-433c-9ad1-541e8ec300c0"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CameraRotation"",
+                    ""type"": ""Value"",
+                    ""id"": ""f296cf53-c1aa-41af-a3ac-d1b670fdb568"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RightCursorClick"",
+                    ""type"": ""Button"",
+                    ""id"": ""4f66f5da-2b27-4895-8d36-f086c83efbcf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CursorPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""86c77059-ebe9-4ff9-afcf-c078026dfd5a"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""ContextAction1"",
+                    ""type"": ""Button"",
+                    ""id"": ""de82dfaa-4961-4c8a-8b31-52b82b63d475"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ContextAction2"",
+                    ""type"": ""Button"",
+                    ""id"": ""b6b42957-a794-4139-bb1c-33f7f54f8732"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ContextAction3"",
+                    ""type"": ""Button"",
+                    ""id"": ""16249425-fb36-473f-8c1f-b4c9fab8f974"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
@@ -115,6 +205,314 @@ namespace RossoGames.Inputs.Service
                     ""action"": ""Cancel"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0dfc73c8-6308-4831-9498-48e9be8f8428"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Cancel"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3def36e-c4ef-4f1c-b4a5-37daaa8b1908"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ee5cb30-6d64-4425-8c00-af2b6fbc1aa8"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bce4a0f-ad23-4a03-adc4-96babcb61b9d"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ceed9243-568e-4d64-a59a-5de3a73cebb7"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""eff609df-decc-421e-9869-81514dc852cf"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""a610204c-4d38-4799-844c-990db8485ffa"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""cf103dbc-7d09-426c-a240-b9673987b7be"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""8d69f63c-e81d-472b-a341-0ff388f6cee7"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""0fbbe31a-d84d-4947-9841-c87671649a5a"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""409fd8a7-c14d-49ed-9509-7bff5a9fb44f"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""99693b91-7ad7-429b-8a6e-a6a89a6dc928"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""658224f7-970f-4771-ba25-480abfa25884"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""404d3931-da3a-4f21-860d-0b3ae4ea80f4"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9ca1af34-c6f3-45b1-9e68-e7b6b4b5972e"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""058aa8ee-0273-4443-aed2-9358254e3985"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardMouse"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1a075faf-9ff4-46c4-b540-27f1b672f80a"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""1D Axis"",
+                    ""id"": ""9938342f-d52d-4e2c-bb5c-5338edaad004"",
+                    ""path"": ""1DAxis(whichSideWins=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotation"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""1ed2e486-52b8-4352-a921-df933bb13b66"",
+                    ""path"": ""<Gamepad>/rightStick/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""6258642b-b1ce-49ec-b91e-b5d45dac7a17"",
+                    ""path"": ""<Gamepad>/rightStick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraRotation"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c8e3223-8947-4542-8ade-92c1594000f9"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RightCursorClick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ed07787-81ae-4be2-8c6a-5134e6db0630"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CursorPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e9523d2a-90be-41f0-89ff-3b98435b334e"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ContextAction1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3c000ad-ba10-41a4-889a-686eaa86088d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ContextAction1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""744877d2-53bf-4bdb-a5c7-ff3ad160eaf1"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ContextAction2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8b65d107-f60e-4f13-9916-8354c3ce010e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ContextAction2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91b405c2-173a-497f-abc2-8dcea3e94539"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ContextAction3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fc9265fa-bcde-4bcc-ad6e-33861ed99cd2"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ContextAction3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -123,7 +521,17 @@ namespace RossoGames.Inputs.Service
 }");
             // Game
             m_Game = asset.FindActionMap("Game", throwIfNotFound: true);
+            m_Game_Pause = m_Game.FindAction("Pause", throwIfNotFound: true);
             m_Game_Cancel = m_Game.FindAction("Cancel", throwIfNotFound: true);
+            m_Game_Move = m_Game.FindAction("Move", throwIfNotFound: true);
+            m_Game_Jump = m_Game.FindAction("Jump", throwIfNotFound: true);
+            m_Game_Sprint = m_Game.FindAction("Sprint", throwIfNotFound: true);
+            m_Game_CameraRotation = m_Game.FindAction("CameraRotation", throwIfNotFound: true);
+            m_Game_RightCursorClick = m_Game.FindAction("RightCursorClick", throwIfNotFound: true);
+            m_Game_CursorPosition = m_Game.FindAction("CursorPosition", throwIfNotFound: true);
+            m_Game_ContextAction1 = m_Game.FindAction("ContextAction1", throwIfNotFound: true);
+            m_Game_ContextAction2 = m_Game.FindAction("ContextAction2", throwIfNotFound: true);
+            m_Game_ContextAction3 = m_Game.FindAction("ContextAction3", throwIfNotFound: true);
         }
 
         ~@InputActionsControls()
@@ -204,7 +612,17 @@ namespace RossoGames.Inputs.Service
         // Game
         private readonly InputActionMap m_Game;
         private List<IGameActions> m_GameActionsCallbackInterfaces = new List<IGameActions>();
+        private readonly InputAction m_Game_Pause;
         private readonly InputAction m_Game_Cancel;
+        private readonly InputAction m_Game_Move;
+        private readonly InputAction m_Game_Jump;
+        private readonly InputAction m_Game_Sprint;
+        private readonly InputAction m_Game_CameraRotation;
+        private readonly InputAction m_Game_RightCursorClick;
+        private readonly InputAction m_Game_CursorPosition;
+        private readonly InputAction m_Game_ContextAction1;
+        private readonly InputAction m_Game_ContextAction2;
+        private readonly InputAction m_Game_ContextAction3;
         /// <summary>
         /// Provides access to input actions defined in input action map "Game".
         /// </summary>
@@ -217,9 +635,49 @@ namespace RossoGames.Inputs.Service
             /// </summary>
             public GameActions(@InputActionsControls wrapper) { m_Wrapper = wrapper; }
             /// <summary>
+            /// Provides access to the underlying input action "Game/Pause".
+            /// </summary>
+            public InputAction @Pause => m_Wrapper.m_Game_Pause;
+            /// <summary>
             /// Provides access to the underlying input action "Game/Cancel".
             /// </summary>
             public InputAction @Cancel => m_Wrapper.m_Game_Cancel;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/Move".
+            /// </summary>
+            public InputAction @Move => m_Wrapper.m_Game_Move;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/Jump".
+            /// </summary>
+            public InputAction @Jump => m_Wrapper.m_Game_Jump;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/Sprint".
+            /// </summary>
+            public InputAction @Sprint => m_Wrapper.m_Game_Sprint;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/CameraRotation".
+            /// </summary>
+            public InputAction @CameraRotation => m_Wrapper.m_Game_CameraRotation;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/RightCursorClick".
+            /// </summary>
+            public InputAction @RightCursorClick => m_Wrapper.m_Game_RightCursorClick;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/CursorPosition".
+            /// </summary>
+            public InputAction @CursorPosition => m_Wrapper.m_Game_CursorPosition;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/ContextAction1".
+            /// </summary>
+            public InputAction @ContextAction1 => m_Wrapper.m_Game_ContextAction1;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/ContextAction2".
+            /// </summary>
+            public InputAction @ContextAction2 => m_Wrapper.m_Game_ContextAction2;
+            /// <summary>
+            /// Provides access to the underlying input action "Game/ContextAction3".
+            /// </summary>
+            public InputAction @ContextAction3 => m_Wrapper.m_Game_ContextAction3;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -246,9 +704,39 @@ namespace RossoGames.Inputs.Service
             {
                 if (instance == null || m_Wrapper.m_GameActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_GameActionsCallbackInterfaces.Add(instance);
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
                 @Cancel.started += instance.OnCancel;
                 @Cancel.performed += instance.OnCancel;
                 @Cancel.canceled += instance.OnCancel;
+                @Move.started += instance.OnMove;
+                @Move.performed += instance.OnMove;
+                @Move.canceled += instance.OnMove;
+                @Jump.started += instance.OnJump;
+                @Jump.performed += instance.OnJump;
+                @Jump.canceled += instance.OnJump;
+                @Sprint.started += instance.OnSprint;
+                @Sprint.performed += instance.OnSprint;
+                @Sprint.canceled += instance.OnSprint;
+                @CameraRotation.started += instance.OnCameraRotation;
+                @CameraRotation.performed += instance.OnCameraRotation;
+                @CameraRotation.canceled += instance.OnCameraRotation;
+                @RightCursorClick.started += instance.OnRightCursorClick;
+                @RightCursorClick.performed += instance.OnRightCursorClick;
+                @RightCursorClick.canceled += instance.OnRightCursorClick;
+                @CursorPosition.started += instance.OnCursorPosition;
+                @CursorPosition.performed += instance.OnCursorPosition;
+                @CursorPosition.canceled += instance.OnCursorPosition;
+                @ContextAction1.started += instance.OnContextAction1;
+                @ContextAction1.performed += instance.OnContextAction1;
+                @ContextAction1.canceled += instance.OnContextAction1;
+                @ContextAction2.started += instance.OnContextAction2;
+                @ContextAction2.performed += instance.OnContextAction2;
+                @ContextAction2.canceled += instance.OnContextAction2;
+                @ContextAction3.started += instance.OnContextAction3;
+                @ContextAction3.performed += instance.OnContextAction3;
+                @ContextAction3.canceled += instance.OnContextAction3;
             }
 
             /// <summary>
@@ -260,9 +748,39 @@ namespace RossoGames.Inputs.Service
             /// <seealso cref="GameActions" />
             private void UnregisterCallbacks(IGameActions instance)
             {
+                @Pause.started -= instance.OnPause;
+                @Pause.performed -= instance.OnPause;
+                @Pause.canceled -= instance.OnPause;
                 @Cancel.started -= instance.OnCancel;
                 @Cancel.performed -= instance.OnCancel;
                 @Cancel.canceled -= instance.OnCancel;
+                @Move.started -= instance.OnMove;
+                @Move.performed -= instance.OnMove;
+                @Move.canceled -= instance.OnMove;
+                @Jump.started -= instance.OnJump;
+                @Jump.performed -= instance.OnJump;
+                @Jump.canceled -= instance.OnJump;
+                @Sprint.started -= instance.OnSprint;
+                @Sprint.performed -= instance.OnSprint;
+                @Sprint.canceled -= instance.OnSprint;
+                @CameraRotation.started -= instance.OnCameraRotation;
+                @CameraRotation.performed -= instance.OnCameraRotation;
+                @CameraRotation.canceled -= instance.OnCameraRotation;
+                @RightCursorClick.started -= instance.OnRightCursorClick;
+                @RightCursorClick.performed -= instance.OnRightCursorClick;
+                @RightCursorClick.canceled -= instance.OnRightCursorClick;
+                @CursorPosition.started -= instance.OnCursorPosition;
+                @CursorPosition.performed -= instance.OnCursorPosition;
+                @CursorPosition.canceled -= instance.OnCursorPosition;
+                @ContextAction1.started -= instance.OnContextAction1;
+                @ContextAction1.performed -= instance.OnContextAction1;
+                @ContextAction1.canceled -= instance.OnContextAction1;
+                @ContextAction2.started -= instance.OnContextAction2;
+                @ContextAction2.performed -= instance.OnContextAction2;
+                @ContextAction2.canceled -= instance.OnContextAction2;
+                @ContextAction3.started -= instance.OnContextAction3;
+                @ContextAction3.performed -= instance.OnContextAction3;
+                @ContextAction3.canceled -= instance.OnContextAction3;
             }
 
             /// <summary>
@@ -304,12 +822,82 @@ namespace RossoGames.Inputs.Service
         public interface IGameActions
         {
             /// <summary>
+            /// Method invoked when associated input action "Pause" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnPause(InputAction.CallbackContext context);
+            /// <summary>
             /// Method invoked when associated input action "Cancel" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnCancel(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Move" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnMove(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Jump" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnJump(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Sprint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnSprint(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "CameraRotation" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnCameraRotation(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "RightCursorClick" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnRightCursorClick(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "CursorPosition" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnCursorPosition(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ContextAction1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnContextAction1(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ContextAction2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnContextAction2(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "ContextAction3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnContextAction3(InputAction.CallbackContext context);
         }
     }
 }

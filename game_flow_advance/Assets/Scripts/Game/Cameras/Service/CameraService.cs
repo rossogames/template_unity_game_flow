@@ -1,47 +1,74 @@
+using Rossoforge.Services.Locator;
+using Rossoforge.Services.Service;
+using Rossogames.Inputs.Service;
 using UnityEngine;
 
-namespace RossoGames.Cameras.Service
+namespace Rossogames.Cameras.Service
 {
-    public class CameraService : ICameraService
+    public class CameraService : ICameraService, IInitializable, IUpdatable, ILateUpdatable
     {
+        private IInputsService _inputsService;
+
         private Camera _camera;
         private Transform _cameraRoot;
-        private float _maxMovementRad;
+        private Transform _target;
 
-        private CameraDataService _serviceData;
+        public float _currentRotationAngle;
+        public float _targetRotationAngle;
+        private float _rotationInput;
+        private float _rotationSensitivity;
+
+        private CameraDataService _dataService;
 
         public Camera Camera => _camera;
         public Vector3 CameraRootPosition => _cameraRoot.position;
         public Vector3 CenterPosition { get; private set; }
+        public bool AllowMove { get; set; }
+        public bool AllowRotate { get; set; }
 
-        public CameraService(CameraDataService serviceData)
+        public CameraService(CameraDataService dataService)
         {
-            _serviceData = serviceData;
+            _dataService = dataService;
         }
         public void Initialize()
         {
-        }
-        public void Dispose()
-        {
+            _inputsService = ServiceLocator.Get<IInputsService>();
         }
 
-        public void SetupCamera(Camera camera, Transform root)
+        public void Update()
+        {
+            UpdateRotationAngle();
+        }
+        public void LateUpdate()
+        {
+            if (_target == null)
+                return;
+
+            UpdateRotationData();
+            Rotate();
+            Move();
+        }
+
+        public void SetupCamera(Camera camera, Transform root, Transform target)
         {
             _camera = camera;
             _cameraRoot = root;
-        }
-        public void SetBounds(Size3<int> mapSize)
-        {
-            Vector3 _mapCenterPosition = new(
-                ((float)mapSize.Width - 1) * 0.5f,
-                1f,
-                ((float)mapSize.Depth - 1) * 0.5f
+            _target = target;
+
+            _targetRotationAngle = _dataService.InitRotationY;
+            _cameraRoot.position = new Vector3(
+                _cameraRoot.position.x,
+                _dataService.Height,
+                _cameraRoot.position.z
             );
 
-            CenterPosition = _mapCenterPosition;
-            _cameraRoot.position = CenterPosition;
-            _maxMovementRad = Mathf.Max(mapSize.Width, mapSize.Depth) * 0.5f;
+            _camera.transform.rotation = Quaternion.Euler(new Vector3(
+                    _dataService.InitRotationX,
+                    _camera.transform.rotation.eulerAngles.y,
+                    _camera.transform.rotation.eulerAngles.z
+                ));
         }
+        /*
         public void SetZoom(float value)
         {
             _camera.orthographicSize = Mathf.Clamp(value, _serviceData.RangeZoom.Min, _serviceData.RangeZoom.Max);
@@ -50,27 +77,44 @@ namespace RossoGames.Cameras.Service
         {
             var cameraSize = _camera.orthographicSize -= value * _serviceData.SensitivityZoom;
             _camera.orthographicSize = Mathf.Clamp(cameraSize, _serviceData.RangeZoom.Min, _serviceData.RangeZoom.Max);
-        }
-        public void MoveCamera(Vector3 displacement)
-        {
-            var displacementPosition = Quaternion.Euler(0, _cameraRoot.rotation.eulerAngles.y, 0) * displacement * _serviceData.SensitivityMove;
-            _cameraRoot.Translate(-displacementPosition, Space.World);
-
-            float distanceToCenter = (_cameraRoot.position - CenterPosition).magnitude;
-            if (distanceToCenter > _maxMovementRad)
-            {
-                var direction = (_cameraRoot.position - CenterPosition).normalized;
-                _cameraRoot.position = CenterPosition + direction * _maxMovementRad;
-            }
-        }
-        public void RotateCamera(float yRotation, Vector3 axis)
-        {
-            float angle = yRotation * _serviceData.SensitivityRotation;
-            _cameraRoot.RotateAround(axis, Vector3.up, angle);
-        }
+        }*/
         public void SetPosition(Vector3 position)
         {
             _cameraRoot.position = position;
+        }
+
+        private void UpdateRotationData()
+        {
+            if (_inputsService.Camera.IsMouseRotation)
+            {
+                _rotationSensitivity = _dataService.SensitivityRotationMouse;
+                _rotationInput = _inputsService.Camera.RotationMouse;
+                return;
+            }
+
+            _rotationSensitivity = _dataService.SensitivityRotationJoystick;
+            _rotationInput = _inputsService.Camera.RotationJoystick;
+        }
+        private void UpdateRotationAngle()
+        {
+            if (Mathf.Abs(_rotationInput) > 0.01f)
+                _targetRotationAngle += _rotationInput * _rotationSensitivity * Time.deltaTime;
+        }
+        private void Rotate()
+        {
+            if (!AllowRotate)
+                return;
+
+            _currentRotationAngle = Mathf.LerpAngle(_currentRotationAngle, _targetRotationAngle, Time.deltaTime * _rotationSensitivity);
+            _cameraRoot.rotation = Quaternion.Euler(0, _currentRotationAngle, 0);
+        }
+        private void Move()
+        {
+            if (!AllowMove)
+                return;
+
+            var targetPosition = new Vector3(_target.position.x, _cameraRoot.transform.position.y, _target.position.z);
+            _cameraRoot.transform.position = Vector3.Lerp(_cameraRoot.transform.position, targetPosition, Time.deltaTime * _dataService.SensitivityMove);
         }
     }
 }

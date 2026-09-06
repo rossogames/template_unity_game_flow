@@ -1,13 +1,14 @@
-using RossoGames.Level.DataTypes;
-using RossoGames.Level.Service;
+using Rossoforge.Services.Locator;
+using Rossogames.Level.DataContext;
+using Rossogames.Level.Service;
 using UnityEngine;
 
-namespace RossoGames.Level.Components
+namespace Rossogames.Level.Components
 {
     public class LevelController : MonoBehaviour
     {
         [SerializeField]
-        private LevelRoots _levelRoots;
+        private LevelRootsDataContext _levelRoots;
 
         private ILevelService _levelService;
 
@@ -16,5 +17,12 @@ namespace RossoGames.Level.Components
             _levelService = ServiceLocator.Get<ILevelService>();
             _levelService.LoadLevel(_levelRoots);
         }
+
+#if UNITY_EDITOR
+        private void OnDrawGizmos()
+        {
+            _levelService?.OnDrawGizmos();
+        }
+#endif
     }
 }

@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace RossoGames.Gameplay.DataBehaviour
+namespace Rossogames.Gameplay.DataBehaviour
 {
-    [CreateAssetMenu(fileName = nameof(PhaseStandByDataBehaviour), menuName = "RossoGames/Data Behaviour/Gameplay Phases/Stand By")]
+    [CreateAssetMenu(fileName = nameof(PhaseStandByDataBehaviour), menuName = "Rossogames/Data Behaviour/Gameplay Phases/Stand By")]
     public class PhaseStandByDataBehaviour : GameplayBasePhaseDataBehaviour
     {
     }

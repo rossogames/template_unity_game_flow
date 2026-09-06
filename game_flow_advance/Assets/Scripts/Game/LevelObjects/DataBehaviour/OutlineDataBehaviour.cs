@@ -1,9 +1,9 @@
-using RossoGames.LevelObjects.Components;
+using Rossogames.LevelObjects.Components;
 using UnityEngine;
 
-namespace RossoGames.LevelObjects.DataBehaviour
+namespace Rossogames.LevelObjects.DataBehaviour
 {
-    [CreateAssetMenu(fileName = nameof(OutlineDataBehaviour), menuName = "RossoGames/Data Behaviour/Outline")]
+    [CreateAssetMenu(fileName = nameof(OutlineDataBehaviour), menuName = "Rossogames/Data Behaviour/Outline")]
     public class OutlineDataBehaviour : ScriptableObject
     {
         [field: SerializeField] public Color Color { get; private set; }

@@ -1,15 +1,21 @@
-using RossoGames.Level.DataAssets;
+using Rossoforge.Pool.DataConfig;
+using Rossogames.Level.DataAssets;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace RossoGames.Level.Service
+namespace Rossogames.Level.Service
 {
-    [CreateAssetMenu(fileName = nameof(LevelDataService), menuName = "RossoGames/Service Data/Level")]
+    [CreateAssetMenu(fileName = nameof(LevelDataService), menuName = "Rossogames/Data Service/Level")]
     public class LevelDataService : ScriptableObject
     {
         [field: SerializeField]
         [field: BoxGroup("Data Asset")]
-        [field: LabelText("Current Level")]
-        public LevelDataAsset CurrentLevelDataAsset { get; private set; }
+        [field: LabelText("Level")]
+        public LevelDataAsset LevelDataAsset { get; private set; }
+
+        [field: SerializeField]
+        [field: BoxGroup("Asset References")]
+        [field: LabelText("Context Actions")]
+        public PooledGameobjectDataConfig ContextActionsAssetReference { get; private set; }
     }
 }

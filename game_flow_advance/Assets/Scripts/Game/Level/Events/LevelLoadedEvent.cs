@@ -1,6 +1,7 @@
-using RossoGames.Level.DataAssets;
+using Rossoforge.Events.Bus;
+using Rossogames.Level.DataAssets;
 
-namespace RossoGames.Level.Events
+namespace Rossogames.Level.Events
 {
     public readonly struct LevelLoadedEvent : IEvent
     {

@@ -1,29 +1,39 @@
-using RossoGames.Progression.Data;
+using Rossoforge.Persistence.Service;
+using Rossogames.Progression.DataState;
+using System.Collections.Generic;
 
-namespace RossoGames.Progression.Service
+namespace Rossogames.Progression.Service
 {
-    public class ProgressionService : IProgressionService
+    public class ProgressionService : PersistenceService<ProgressionData>, IProgressionService
     {
-        private IUserDataService<SaveData> _userDataService;
+        private ProgressionDataService _dataService;
+        public Dictionary<string, BaseDataState> DataStateCollection;
 
-        private ProgressionDataService _serviceData;
-
-        public ProgressionService(ProgressionDataService serviceData)
+        public ProgressionService(ProgressionDataService dataService) : base(dataService)
         {
-            _serviceData = serviceData;
+            _dataService = dataService;
         }
 
-        public void Initialize()
+        public override void Initialize()
         {
-            _userDataService = ServiceLocator.Get<IUserDataService<SaveData>>();
-            _userDataService.Load();
+            base.Initialize();
         }
 
         public void SaveProgression()
         {
-            var currentSave = _userDataService.CurrentSave;
-            currentSave.Version = 1;
-            _userDataService.Save();
+            Data.Version = 1;
+            Save();
+        }
+
+        public T RegisterDataState<T>(string id) where T : BaseDataState, new()
+        {
+            if (!Data.DataStateCollection.TryGetValue(id, out var dataState))
+            {
+                dataState = new T();
+                Data.DataStateCollection.Add(id, dataState);
+            }
+
+            return dataState as T;
         }
     }
 }

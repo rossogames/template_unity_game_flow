@@ -1,6 +1,6 @@
 using Rossoforge.Controls.Buttons;
 
-namespace RossoGames.Popups.PopupQuestion
+namespace Rossogames.Popups.Question
 {
     public class PopupQuestionButtonCancel : ButtonEventsHandler<PopupQuestionButtonCancel>
     {

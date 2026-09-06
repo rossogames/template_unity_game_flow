@@ -1,7 +1,7 @@
 using Rossoforge.Controls.Buttons;
 using Rossoforge.Popups.UI;
 
-namespace RossoGames.Popups.PopupPause
+namespace Rossogames.Popups.Pause
 {
     public class PopupPauseView : PopupView<PopupPauseView, PopupPausePresenter, PopupPauseData>,
         IButtonClickListener<PopupPauseButtonContinue>,

@@ -1,10 +1,10 @@
-using RossoGames.Gameplay.DataBehaviour;
+using Rossogames.Gameplay.DataBehaviour;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace RossoGames.Gameplay.Service
+namespace Rossogames.Gameplay.Service
 {
-    [CreateAssetMenu(fileName = nameof(GameplayDataService), menuName = "RossoGames/Service Data/Gameplay")]
+    [CreateAssetMenu(fileName = nameof(GameplayDataService), menuName = "Rossogames/Data Service/Gameplay")]
     public class GameplayDataService : ScriptableObject
     {
         [field: SerializeField]
@@ -21,5 +21,10 @@ namespace RossoGames.Gameplay.Service
         [field: BoxGroup("Phase Data Behaviour")]
         [field: LabelText("Level Unload")]
         public PhaseLevelUnloadDataBehaviour LevelUnloadDataBehaviour { get; private set; }
+
+        [field: SerializeField]
+        [field: BoxGroup("Phase Data Behaviour")]
+        [field: LabelText("Exploration")]
+        public PhaseExplorationDataBehaviour ExplorationDataBehaviour { get; private set; }
     }
 }

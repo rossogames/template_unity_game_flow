@@ -5,21 +5,21 @@ using Rossoforge.Popups.Service;
 using Rossoforge.Scenes.Service;
 using Rossoforge.Services.Locator;
 using Rossoforge.TimeFlow.Service;
-using RossoGames.Cameras.Service;
-using RossoGames.Currencies.Service;
-using RossoGames.Gameplay.Service;
-using RossoGames.Inputs.Service;
-using RossoGames.Level.Service;
-using RossoGames.PopupFlow.Service;
-using RossoGames.Progression.Data;
-using RossoGames.Progression.Service;
-using RossoGames.Raycast.Service;
-using RossoGames.SceneFlow.Service;
-using RossoGames.Settings.Service;
+using Rossogames.Cameras.Service;
+using Rossogames.Currencies.Service;
+using Rossogames.Gameplay.Service;
+using Rossogames.Inputs.Service;
+using Rossogames.Inventory.Service;
+using Rossogames.Level.Service;
+using Rossogames.PopupFlow.Service;
+using Rossogames.Progression.Service;
+using Rossogames.Raycast.Service;
+using Rossogames.SceneFlow.Service;
+using Rossogames.Settings.Service;
 using Sirenix.OdinInspector;
 using UnityEngine;
 
-namespace RossoGames.Boot.Components
+namespace Rossogames.Boot.Components
 {
     public class Boot : MonoBehaviour
     {
@@ -35,6 +35,7 @@ namespace RossoGames.Boot.Components
         [SerializeField, BoxGroup("Game")] private CameraDataService _cameraDataService;
         [SerializeField, BoxGroup("Game")] private GameplayDataService _gameplayDataService;
         [SerializeField, BoxGroup("Game")] private LevelDataService _levelDataService;
+        [SerializeField, BoxGroup("Game")] private InventoryDataService _inventoryDataService;
 
         private void Awake()
         {
@@ -75,12 +76,14 @@ namespace RossoGames.Boot.Components
             var sceneFlowService = new SceneFlowService(_sceneFlowDataService);
             var popupFlowService = new PopupFlowService(_popupFlowDataService);
             var settingsService = new SettingsService(_settingsDataService);
+            var raycastService = new RaycastService();
             var progressionDataService = new ProgressionService(_progressionDataService);
 
             ServiceLocator.Register<IInputsService>(inptuService);
             ServiceLocator.Register<ISceneFlowService>(sceneFlowService);
             ServiceLocator.Register<IPopupFlowService>(popupFlowService);
             ServiceLocator.Register<ISettingsService>(settingsService);
+            ServiceLocator.Register<IRaycastService>(raycastService);
             ServiceLocator.Register<IProgressionService>(progressionDataService);
         }
 
@@ -90,11 +93,13 @@ namespace RossoGames.Boot.Components
             var gameplayService = new GameplayService(_gameplayDataService);
             var levelService = new LevelService(_levelDataService);
             var currencyService = new CurrencyService();
+            var inventoryService = new InventoryService(_inventoryDataService);
 
             ServiceLocator.Register<ICameraService>(cameraService);
             ServiceLocator.Register<IGameplayService>(gameplayService);
             ServiceLocator.Register<ILevelService>(levelService);
             ServiceLocator.Register<ICurrencyService>(currencyService);
+            ServiceLocator.Register<IInventoryService>(inventoryService);
         }
     }
 }

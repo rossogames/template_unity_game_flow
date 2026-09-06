@@ -1,6 +1,7 @@
-using RossoGames.Gameplay.Phases;
+using Rossoforge.Events.Bus;
+using Rossogames.Gameplay.Phases;
 
-namespace RossoGames.Gameplay.Events
+namespace Rossogames.Gameplay.Events
 {
     public readonly struct GameplayPhaseChangedEvent : IEvent
     {

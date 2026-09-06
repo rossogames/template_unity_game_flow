@@ -1,7 +1,10 @@
 ﻿<Solution>
   <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="CodeStage.AFPSCounter.Runtime.csproj" />
   <Project Path="Game.csproj" />
+  <Project Path="CodeStage.AFPSCounter.Editor.csproj" />
   <Project Path="Game.Editor.csproj" />
-  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="CodeStage.AFPSCounter.Examples.csproj" />
+  <Project Path="Assembly-CSharp-Editor-firstpass.csproj" />
   <Project Path="Sirenix.OdinInspector.Modules.UnityMathematics.csproj" />
 </Solution>

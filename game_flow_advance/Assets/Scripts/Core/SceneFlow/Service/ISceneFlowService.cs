@@ -2,7 +2,7 @@ using Rossoforge.Services.Service;
 using System;
 using UnityEngine;
 
-namespace RossoGames.SceneFlow.Service
+namespace Rossogames.SceneFlow.Service
 {
     public interface ISceneFlowService : IService
     {

@@ -1,16 +1,22 @@
-using RossoGames.Gameplay.Events;
-using RossoGames.Gameplay.Service;
+using Rossoforge.Events.Bus;
+using Rossoforge.Events.Service;
+using Rossoforge.Services.Locator;
+using Rossogames.Characters.Components;
+using Rossogames.Gameplay.Events;
+using Rossogames.Gameplay.Service;
 using System;
 using TMPro;
 using UnityEngine;
 
-namespace RossoGames.Test
+namespace Rossogames.Test
 {
     public class HudTest : MonoBehaviour,
         IEventListener<GameplayPhaseChangedEvent>
     {
         [SerializeField]
         private TextMeshProUGUI _label;
+
+        [SerializeField] private ThirdPersonController _characterController;
 
         private IEventService _eventService;
         private IGameplayService gameplayService;
@@ -45,6 +51,7 @@ namespace RossoGames.Test
             if (_phaseType != null)
                 text = _phaseType.Name + "\r\n";
 
+            text += _characterController.StateMachine.CurrentState.GetType().Name + "\r\n";
             _label.text = text;
         }
 

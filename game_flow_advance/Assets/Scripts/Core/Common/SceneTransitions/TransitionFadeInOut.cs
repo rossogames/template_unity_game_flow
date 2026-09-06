@@ -1,6 +1,9 @@
+using Rossoforge.Events.Service;
+using Rossoforge.Scenes.Components;
+using Rossoforge.Services.Locator;
 using UnityEngine;
 
-namespace RossoGames.Common.SceneTransitions
+namespace Rossogames.Common.SceneTransitions
 {
     [RequireComponent(typeof(Animator))]
     public class TransitionFadeInOut : SceneTransition

@@ -1,4 +1,4 @@
-namespace RossoGames.SceneFlow.Service
+namespace Rossogames.SceneFlow.Service
 {
     public enum SceneTransitionType
     {

@@ -1,10 +1,10 @@
 using Rossoforge.Services.Service;
-using RossoGames.Currencies.DataEntities;
-using RossoGames.Currencies.DataTypes;
+using Rossogames.Currencies.DataEntities;
+using Rossogames.Currencies.DataStructures;
 
-namespace RossoGames.Currencies.Service
+namespace Rossogames.Currencies.Service
 {
-    public interface ICurrencyService : IService, IInitializable
+    public interface ICurrencyService : IService
     {
         CurrencyAmount GetCurrencyAmount(CurrencyDataEntity currencyDataEntity);
         bool HasEnough(CurrencyDataEntity currency, int amount);

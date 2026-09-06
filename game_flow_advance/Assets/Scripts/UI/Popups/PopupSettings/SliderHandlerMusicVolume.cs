@@ -1,6 +1,9 @@
 using Rossoforge.Controls.Sliders;
 
-public class SliderHandlerMusicVolume : SliderEventsHandler<SliderHandlerMusicVolume>
+namespace Rossogames.Popups.Settings
 {
+    public class SliderHandlerMusicVolume : SliderEventsHandler<SliderHandlerMusicVolume>
+    {
 
+    }
 }

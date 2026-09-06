@@ -1,8 +1,8 @@
 using Rossoforge.Popups.UI;
 using Rossoforge.Services.Locator;
-using RossoGames.Settings.Service;
+using Rossogames.Settings.Service;
 
-namespace RossoGames.Popups.PopupSettings
+namespace Rossogames.Popups.Settings
 {
     public class PopupSettingsPresenter : PopupPresenter<PopupSettingsView, PopupSettingsPresenter, IPopupData>
     {
@@ -37,6 +37,10 @@ namespace RossoGames.Popups.PopupSettings
         {
             _settingsService.SfxVolume = value;
         }
+        public void SetVSyncEnabled(bool value)
+        {
+            _settingsService.VSync = value;
+        }
 
         public void SaveSettings()
         {
@@ -57,6 +61,8 @@ namespace RossoGames.Popups.PopupSettings
 
             View.SfxEnabledSwitch.IsOn = _settingsService.SfxEnabled;
             View.SfxVolumeSlider.value = _settingsService.SfxVolume;
+
+            View.VSyncEnabled.IsOn = _settingsService.VSync;
         }
     }
 }

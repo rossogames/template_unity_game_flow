@@ -1,14 +1,15 @@
+using Rossoforge.Audio.DataConfig;
 using UnityEngine;
 
-namespace RossoGames.Settings.Service
+namespace Rossogames.Settings.Service
 {
-    [CreateAssetMenu(fileName = nameof(SettingsDataService), menuName = "RossoGames/Service Data/Settings")]
+    [CreateAssetMenu(fileName = nameof(SettingsDataService), menuName = "Rossogames/Data Service/Settings")]
     public class SettingsDataService : ScriptableObject
     {
         [field: SerializeField]
-        public AudioChannelData MusicChannelData { get; set; }
+        public AudioChannelDataConfig MusicChannelData { get; set; }
 
         [field: SerializeField]
-        public AudioChannelData SfxChannelData { get; set; }
+        public AudioChannelDataConfig SfxChannelData { get; set; }
     }
 }

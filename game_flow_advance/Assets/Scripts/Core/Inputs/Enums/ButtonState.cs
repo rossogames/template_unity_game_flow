@@ -1,4 +1,4 @@
-﻿namespace RossoGames.Inputs.Enums
+﻿namespace Rossogames.Inputs.Enums
 {
     public enum ButtonState
     {

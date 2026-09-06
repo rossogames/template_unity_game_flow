@@ -3,7 +3,7 @@ using Rossoforge.Popups.UI;
 using TMPro;
 using UnityEngine;
 
-namespace RossoGames.Popups.PopupQuestion
+namespace Rossogames.Popups.Question
 {
     public class PopupQuestionView : PopupView<PopupQuestionView, PopupQuestionPresenter, PopupQuestionData>,
         IButtonClickListener<PopupQuestionButtonOk>,

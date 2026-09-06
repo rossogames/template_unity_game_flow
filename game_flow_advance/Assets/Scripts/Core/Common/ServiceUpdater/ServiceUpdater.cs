@@ -1,6 +1,7 @@
+using Rossoforge.Services.Locator;
 using UnityEngine;
 
-namespace RossoGames.Common.ServiceUpdater
+namespace Rossogames.Common.ServiceUpdater
 {
     public class ServiceUpdater : MonoBehaviour
     {

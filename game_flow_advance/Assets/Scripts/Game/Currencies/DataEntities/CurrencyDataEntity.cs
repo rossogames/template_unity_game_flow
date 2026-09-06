@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace RossoGames.Currencies.DataEntities
+namespace Rossogames.Currencies.DataEntities
 {
-    [CreateAssetMenu(fileName = nameof(CurrencyDataEntity), menuName = "RossoGames/Data Entities/Currency")]
+    [CreateAssetMenu(fileName = nameof(CurrencyDataEntity), menuName = "Rossogames/Data Entities/Currency")]
     public class CurrencyDataEntity : ScriptableObject
     {
         [field: SerializeField]

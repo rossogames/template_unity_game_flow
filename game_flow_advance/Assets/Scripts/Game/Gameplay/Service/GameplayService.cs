@@ -1,15 +1,20 @@
-using RossoGames.Inputs.Events;
-using RossoGames.Level.Events;
-using RossoGames.PopupFlow.Service;
-using RossoGames.SceneFlow.Service;
+using Rossoforge.Events.Bus;
+using Rossoforge.Events.Service;
+using Rossoforge.Services.Locator;
+using Rossoforge.Services.Service;
+using Rossoforge.TimeFlow.Service;
+using Rossogames.Inputs.Events;
+using Rossogames.Level.Events;
+using Rossogames.PopupFlow.Service;
+using Rossogames.SceneFlow.Service;
 using System;
 using UnityEngine;
 
-namespace RossoGames.Gameplay.Service
+namespace Rossogames.Gameplay.Service
 {
-    public class GameplayService : IGameplayService, IDisposable,
+    public class GameplayService : IGameplayService, IInitializable, IDisposable,
         //--INPUTS--
-        IEventListener<CancelInputPressedEvent>,
+        IEventListener<PauseInputPressedEvent>,
         //--LEVEL--
         IEventListener<LevelLoadedEvent>
     {
@@ -18,14 +23,14 @@ namespace RossoGames.Gameplay.Service
         private ISceneFlowService _sceneFlowService;
         private ITimeFlowService _timeFlowService;
 
-        private GameplayDataService _serviceData;
+        private GameplayDataService _dataService;
         private GameplayStateMachine _stateMachine;
 
-        public GameplayDataService ServiceData => _serviceData;
+        public GameplayDataService ServiceData => _dataService;
 
-        public GameplayService(GameplayDataService serviceData)
+        public GameplayService(GameplayDataService dataService)
         {
-            _serviceData = serviceData;
+            _dataService = dataService;
         }
         public void Initialize()
         {
@@ -34,7 +39,7 @@ namespace RossoGames.Gameplay.Service
             _sceneFlowService = ServiceLocator.Get<ISceneFlowService>();
             _timeFlowService = ServiceLocator.Get<ITimeFlowService>();
 
-            _stateMachine = new GameplayStateMachine(_serviceData);
+            _stateMachine = new GameplayStateMachine(_dataService);
             _stateMachine.StartMachine(_stateMachine.PhaseStandBy);
         }
         public void Dispose()
@@ -54,6 +59,10 @@ namespace RossoGames.Gameplay.Service
         {
             return _stateMachine.TransitionTo(_stateMachine.PhaseStandBy);
         }
+        public Awaitable<bool> TransitionToPhaseExploration()
+        {
+            return _stateMachine.TransitionTo(_stateMachine.PhaseExploration);
+        }
 
         //--GAME FLOW--
         public async void StartGameplay()
@@ -64,7 +73,7 @@ namespace RossoGames.Gameplay.Service
         }
 
         //--INPUTS--
-        public void OnEventInvoked(CancelInputPressedEvent eventArg)
+        public void OnEventInvoked(PauseInputPressedEvent eventArg)
         {
             if (!CanInvokenInputEvent())
                 return;
@@ -81,14 +90,15 @@ namespace RossoGames.Gameplay.Service
         private void RegisterEvents()
         {
             //--INPUTS--
-            _eventService.RegisterListener<CancelInputPressedEvent>(this);
+
+            _eventService.RegisterListener<PauseInputPressedEvent>(this);
             //--LEVEL--
             _eventService.RegisterListener<LevelLoadedEvent>(this);
         }
         private void UnregisterEvents()
         {
             //--INPUTS--
-            _eventService.UnregisterListener<CancelInputPressedEvent>(this);
+            _eventService.UnregisterListener<PauseInputPressedEvent>(this);
             //--LEVEL--
             _eventService.UnregisterListener<LevelLoadedEvent>(this);
         }

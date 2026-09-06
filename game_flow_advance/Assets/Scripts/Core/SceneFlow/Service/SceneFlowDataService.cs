@@ -1,9 +1,10 @@
+using Rossoforge.Scenes.DataConfig;
 using System;
 using UnityEngine;
 
-namespace RossoGames.SceneFlow.Service
+namespace Rossogames.SceneFlow.Service
 {
-    [CreateAssetMenu(fileName = nameof(SceneFlowDataService), menuName = "RossoGames/Service Data/SceneFlow")]
+    [CreateAssetMenu(fileName = nameof(SceneFlowDataService), menuName = "Rossogames/Data Service/SceneFlow")]
     public class SceneFlowDataService : ScriptableObject
     {
         [field: SerializeField]
@@ -21,9 +22,6 @@ namespace RossoGames.SceneFlow.Service
 
         [field: SerializeField]
         public string GamePlay { get; private set; }
-
-        [field: SerializeField]
-        public string GamePlayUnload { get; private set; }
     }
 
     [Serializable]
@@ -33,6 +31,6 @@ namespace RossoGames.SceneFlow.Service
         public SceneTransitionType Type { get; private set; }
 
         [field: SerializeField]
-        public SceneTransitionData Data { get; private set; }
+        public SceneTransitionDataConfig Data { get; private set; }
     }
 }

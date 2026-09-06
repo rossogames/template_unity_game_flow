@@ -1,6 +1,7 @@
-using RossoGames.Currencies.DataTypes;
+using Rossoforge.Events.Bus;
+using Rossogames.Currencies.DataStructures;
 
-namespace RossoGames.Currencies.Events
+namespace Rossogames.Currencies.Events
 {
     public struct CurrencyAmountChangedEvent : IEvent
     {

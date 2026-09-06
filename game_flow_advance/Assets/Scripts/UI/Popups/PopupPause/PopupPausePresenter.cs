@@ -1,6 +1,6 @@
 using Rossoforge.Popups.UI;
 
-namespace RossoGames.Popups.PopupPause
+namespace Rossogames.Popups.Pause
 {
     public class PopupPausePresenter : PopupPresenter<PopupPauseView, PopupPausePresenter, PopupPauseData>
     {

@@ -1,19 +1,21 @@
+using Rossoforge.Events.Service;
+using Rossoforge.Services.Locator;
 using Rossoforge.Utils.StateMachine;
-using RossoGames.Cameras.Service;
-using RossoGames.Currencies.Service;
-using RossoGames.Gameplay.DataBehaviour;
-using RossoGames.Gameplay.Events;
-using RossoGames.Gameplay.Service;
-using RossoGames.Inputs.Service;
-using RossoGames.Level.Events;
-using RossoGames.Level.Service;
+using Rossogames.Cameras.Service;
+using Rossogames.Currencies.Service;
+using Rossogames.Gameplay.DataBehaviour;
+using Rossogames.Gameplay.Events;
+using Rossogames.Gameplay.Service;
+using Rossogames.Inputs.Service;
+using Rossogames.Level.Events;
+using Rossogames.Level.Service;
 
-namespace RossoGames.Gameplay.Phases
+namespace Rossogames.Gameplay.Phases
 {
     public abstract class GameplayBasePhase : IState
     {
         protected IEventService _eventService;
-        protected IInputsService _gameInputsService;
+        protected IInputsService _inputsService;
         protected ICameraService _cameraService;
         protected IGameplayService _gameplayService;
         protected ILevelService _levelService;
@@ -27,7 +29,7 @@ namespace RossoGames.Gameplay.Phases
             DataBehaviour = dataBehaviour;
 
             _eventService = ServiceLocator.Get<IEventService>();
-            _gameInputsService = ServiceLocator.Get<IInputsService>();
+            _inputsService = ServiceLocator.Get<IInputsService>();
             _cameraService = ServiceLocator.Get<ICameraService>();
             _gameplayService = ServiceLocator.Get<IGameplayService>();
             _levelService = ServiceLocator.Get<ILevelService>();
@@ -36,6 +38,9 @@ namespace RossoGames.Gameplay.Phases
 
         public virtual void Enter()
         {
+            _cameraService.AllowMove = DataBehaviour.AllowMove;
+            _cameraService.AllowRotate = DataBehaviour.AllowRotate;
+
             _eventService.Raise(new GameplayPhaseChangedEvent(this));
         }
         public virtual void Exit()

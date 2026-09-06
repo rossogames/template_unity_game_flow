@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace RossoGames.Gameplay.DataBehaviour
+namespace Rossogames.Gameplay.DataBehaviour
 {
-    [CreateAssetMenu(fileName = nameof(PhaseLevelUnloadDataBehaviour), menuName = "RossoGames/Data Behaviour/Gameplay Phases/Level Unload")]
+    [CreateAssetMenu(fileName = nameof(PhaseLevelUnloadDataBehaviour), menuName = "Rossogames/Data Behaviour/Gameplay Phases/Level Unload")]
     public class PhaseLevelUnloadDataBehaviour : GameplayBasePhaseDataBehaviour
     {
     }

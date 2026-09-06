@@ -1,6 +1,9 @@
 using Rossoforge.Controls.Switches;
 
-public class SwitchHandlerSfxEnabled : SwitchEventsHandler<SwitchHandlerSfxEnabled>
+namespace Rossogames.Popups.Settings
 {
+    public class SwitchHandlerSfxEnabled : SwitchEventsHandler<SwitchHandlerSfxEnabled>
+    {
 
+    }
 }

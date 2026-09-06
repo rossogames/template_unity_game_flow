@@ -1,6 +1,9 @@
 using Rossoforge.Controls.Switches;
 
-public class SwitchHandlerMusicEnabled : SwitchEventsHandler<SwitchHandlerMusicEnabled>
+namespace Rossogames.Popups.Settings
 {
+    public class SwitchHandlerMusicEnabled : SwitchEventsHandler<SwitchHandlerMusicEnabled>
+    {
 
+    }
 }

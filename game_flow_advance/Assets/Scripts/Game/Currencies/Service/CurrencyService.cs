@@ -1,11 +1,14 @@
-using RossoGames.Currencies.DataEntities;
-using RossoGames.Currencies.DataTypes;
-using RossoGames.Currencies.Events;
+using Rossoforge.Events.Service;
+using Rossoforge.Services.Locator;
+using Rossoforge.Services.Service;
+using Rossogames.Currencies.DataEntities;
+using Rossogames.Currencies.DataStructures;
+using Rossogames.Currencies.Events;
 using System.Collections.Generic;
 
-namespace RossoGames.Currencies.Service
+namespace Rossogames.Currencies.Service
 {
-    public class CurrencyService : ICurrencyService
+    public class CurrencyService : ICurrencyService, IInitializable
     {
         private IEventService _eventService;
 

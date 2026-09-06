@@ -1,9 +1,12 @@
+using Rossogames.LevelObjects.DataAssets;
 using UnityEngine;
 
-namespace RossoGames.Level.DataAssets
+namespace Rossogames.Level.DataAssets
 {
-    [CreateAssetMenu(fileName = nameof(LevelDataAsset), menuName = "RossoGames/Data Assets/Level")]
+    [CreateAssetMenu(fileName = nameof(LevelDataAsset), menuName = "Rossogames/Data Assets/Level")]
     public class LevelDataAsset : ScriptableObject
     {
+        [field: SerializeField]
+        public LevelRoomDataAsset[] Rooms { get; private set; }
     }
 }

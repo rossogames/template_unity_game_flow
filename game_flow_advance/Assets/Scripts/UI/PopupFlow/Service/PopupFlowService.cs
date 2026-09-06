@@ -1,38 +1,40 @@
 using Rossoforge.Events.Bus;
 using Rossoforge.Events.Service;
 using Rossoforge.Pool.DataConfig;
+using Rossoforge.Pool.Service;
 using Rossoforge.Popups.Service;
 using Rossoforge.Popups.UI;
 using Rossoforge.Services.Locator;
 using Rossoforge.Services.Service;
 using Rossoforge.Utils.Logger;
-using RossoGames.Inputs.Events;
-using RossoGames.Popups.PopupPause;
-using RossoGames.Popups.PopupQuestion;
-using RossoGames.Popups.PopupSettings;
+using Rossogames.Common;
+using Rossogames.Inputs.Events;
+using Rossogames.Items.DataEntities;
+using Rossogames.Popups.Container;
+using Rossogames.Popups.Inventory;
+using Rossogames.Popups.Pause;
+using Rossogames.Popups.Question;
+using Rossogames.Popups.Settings;
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace RossoGames.PopupFlow.Service
+namespace Rossogames.PopupFlow.Service
 {
     public class PopupFlowService : IPopupFlowService, IInitializable, IDisposable,
         IEventListener<CancelInputPressedEvent>
     {
         private IEventService _eventService;
         private IPopupService _popupService;
-        private PopupFlowDataService _serviceData;
+        private PopupFlowDataService _dataService;
 
-        private Dictionary<PopupType, PooledGameobjectDataConfig> _popupsMap = new();
-
-        public PopupFlowService(PopupFlowDataService serviceData)
+        public PopupFlowService(PopupFlowDataService dataService)
         {
-            _serviceData = serviceData;
+            _dataService = dataService;
         }
 
         public void Initialize()
         {
-            if (_serviceData == null)
+            if (_dataService == null)
             {
                 RossoLogger.Error($"{nameof(PopupFlowDataService)} not assigned");
                 return;
@@ -42,8 +44,6 @@ namespace RossoGames.PopupFlow.Service
             _popupService = ServiceLocator.Get<IPopupService>();
 
             _eventService.RegisterListener<CancelInputPressedEvent>(this);
-
-            InitializePopupsMapper();
         }
 
         public void Dispose()
@@ -65,8 +65,10 @@ namespace RossoGames.PopupFlow.Service
             };
 
             await OpenPopupUntilClosed<PopupQuestionView, PopupQuestionData>(
-                 PopupType.ConfirmQuit,
-                 popupData);
+                _dataService.PopupQuestionAssetReference,
+                popupData,
+                poolCategory: PoolCategories.MainUI
+            );
 
             return popupData.Result;
         }
@@ -74,8 +76,10 @@ namespace RossoGames.PopupFlow.Service
         public void OpenSettings()
         {
             _ = OpenPopup<PopupSettingsView, IPopupData>(
-                 PopupType.Settings,
-                 null);
+                _dataService.PopupSettingsAssetReference,
+                null,
+                poolCategory: PoolCategories.MainUI
+            );
         }
 
         public async Awaitable<PopupPauseData> OpenPause()
@@ -83,79 +87,66 @@ namespace RossoGames.PopupFlow.Service
             var popupData = new PopupPauseData();
 
             await OpenPopupUntilClosed<PopupPauseView, PopupPauseData>(
-                 PopupType.Pause,
-                 popupData);
+                _dataService.PopupPauseAssetReference,
+                popupData,
+                poolCategory: PoolCategories.Gameplay
+            );
 
             return popupData;
         }
 
+        public async Awaitable OpenPopupContainer(ContainerDataEntity containerDataEntity)
+        {
+            var popupData = new PopupContainerData(containerDataEntity);
+
+            await OpenPopupUntilClosed<PopupContainerView, PopupContainerData>(
+                _dataService.PopupContainerAssetReference,
+                popupData,
+                poolCategory: PoolCategories.Gameplay
+            );
+        }
+
+        public async Awaitable OpenPopupInventory(InventoryDataEntity inventoryDataEntity)
+        {
+            var popupData = new PopupInventoryData(inventoryDataEntity);
+
+            await OpenPopupUntilClosed<PopupInventoryView, PopupInventoryData>(
+                _dataService.PopupInventoryAssetReference,
+                popupData,
+                poolCategory: PoolCategories.Gameplay
+            );
+        }
+
         private async Awaitable<TView> OpenPopupUntilClosed<TView, TData>(
-            PopupType popupType,
+            PooledGameobjectDataConfig assetReference,
             TData popupData,
             Vector3 position = default,
-            Space relativeTo = Space.Self)
+            Space relativeTo = Space.Self,
+            string poolCategory = IPoolService.DEFAULT_CATEGORY
+        )
                 where TView : MonoBehaviour, IPopupView
                 where TData : IPopupData
         {
-            var assetReference = GetPooledPopupReference(popupType);
             if (assetReference == null)
                 return null;
 
-            return await _popupService.OpenPopupUntilClosed<TView>(assetReference, popupData, position, relativeTo);
+            return await _popupService.OpenPopupUntilClosed<TView>(assetReference, popupData, position, relativeTo, poolCategory);
         }
 
         private TView OpenPopup<TView, TData>(
-            PopupType popupType,
+            PooledGameobjectDataConfig assetReference,
             TData popupData,
             Vector3 position = default,
-            Space relativeTo = Space.Self)
+            Space relativeTo = Space.Self,
+            string poolCategory = IPoolService.DEFAULT_CATEGORY
+        )
         where TView : MonoBehaviour, IPopupView
         where TData : IPopupData
         {
-            var assetReference = GetPooledPopupReference(popupType);
             if (assetReference == null)
                 return null;
 
-            return _popupService.OpenPopup<TView>(assetReference, popupData, position, relativeTo);
-        }
-
-        private PooledGameobjectDataConfig GetPooledPopupReference(PopupType popupType)
-        {
-            if (!_popupsMap.TryGetValue(popupType, out PooledGameobjectDataConfig assetReference))
-            {
-                RossoLogger.Error($"Popup asset for type '{popupType}' not found. Check {nameof(PopupFlowDataService)}");
-                return null;
-            }
-
-            return assetReference;
-        }
-
-        private void InitializePopupsMapper()
-        {
-            _popupsMap.Clear();
-
-            if (_serviceData.Popups == null || _serviceData.Popups.Length == 0)
-            {
-                RossoLogger.Warning($"No popups configured in {nameof(PopupFlowDataService)}");
-                return;
-            }
-
-            foreach (var entry in _serviceData.Popups)
-            {
-                if (_popupsMap.ContainsKey(entry.Type))
-                {
-                    RossoLogger.Warning($"Duplicate PopupType entry: {entry.Type}");
-                    continue;
-                }
-
-                if (entry.AssetReference == null)
-                {
-                    RossoLogger.Warning($"Popup '{entry.Type}' has no AssetReference assigned");
-                    continue;
-                }
-
-                _popupsMap.Add(entry.Type, entry.AssetReference);
-            }
+            return _popupService.OpenPopup<TView>(assetReference, popupData, position, relativeTo, poolCategory);
         }
 
         public void OnEventInvoked(CancelInputPressedEvent eventArg)

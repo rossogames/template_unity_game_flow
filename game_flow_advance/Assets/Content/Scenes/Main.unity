@@ -829,7 +829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49c5f241047b18748b089f3f62730162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Rossoforge.Audio::Rossoforge.Audio.Components.StaticAudioHandler
-  _configData: {fileID: 11400000, guid: 74180cf5fa229114f9f7c8996b837b54, type: 2}
+  _audioDataConfig: {fileID: 11400000, guid: 74180cf5fa229114f9f7c8996b837b54, type: 2}
 --- !u!82 &379810614
 AudioSource:
   m_ObjectHideFlags: 0

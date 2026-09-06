@@ -1,9 +1,11 @@
 using Rossoforge.Services.Service;
 
-namespace RossoGames.Inputs.Service
+namespace Rossogames.Inputs.Service
 {
-    public interface IInputsService : IService, IInitializable
+    public interface IInputsService : IService
     {
-        float HorizontalAxis { get; }
+        CharacterInputs Character { get; }
+        CameraInputs Camera { get; }
+        InputType CurrentInputType { get; }
     }
 }

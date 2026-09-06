@@ -1,12 +1,15 @@
-using RossoGames.Currencies.DataEntities;
-using RossoGames.Currencies.DataTypes;
-using RossoGames.Currencies.Events;
-using RossoGames.Currencies.Service;
+using Rossoforge.Events.Bus;
+using Rossoforge.Events.Service;
+using Rossoforge.Services.Locator;
+using Rossogames.Currencies.DataEntities;
+using Rossogames.Currencies.DataStructures;
+using Rossogames.Currencies.Events;
+using Rossogames.Currencies.Service;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RossoGames.Gameplay.Components
+namespace Rossogames.Gameplay.Components
 {
     public class HudCurrency : MonoBehaviour, IEventListener<CurrencyAmountChangedEvent>
     {

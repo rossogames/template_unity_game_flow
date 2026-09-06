@@ -1,6 +1,9 @@
 using Rossoforge.Controls.Buttons;
 
-public class ButtonHandlerSave : ButtonEventsHandler<ButtonHandlerSave>
+namespace Rossogames.Popups.Settings
 {
+    public class ButtonHandlerSave : ButtonEventsHandler<ButtonHandlerSave>
+    {
 
+    }
 }

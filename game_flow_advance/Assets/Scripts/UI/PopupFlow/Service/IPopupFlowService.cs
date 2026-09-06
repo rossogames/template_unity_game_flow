@@ -1,14 +1,17 @@
 using Rossoforge.Services.Service;
-using RossoGames.Popups.PopupPause;
-using RossoGames.Popups.PopupQuestion;
+using Rossogames.Items.DataEntities;
+using Rossogames.Popups.Pause;
+using Rossogames.Popups.Question;
 using UnityEngine;
 
-namespace RossoGames.PopupFlow.Service
+namespace Rossogames.PopupFlow.Service
 {
     public interface IPopupFlowService : IService
     {
         Awaitable<QuestionResult> OpenConfirmQuit();
         void OpenSettings();
         Awaitable<PopupPauseData> OpenPause();
+        Awaitable OpenPopupContainer(ContainerDataEntity containerDataEntity);
+        Awaitable OpenPopupInventory(InventoryDataEntity inventoryDataEntity);
     }
 }

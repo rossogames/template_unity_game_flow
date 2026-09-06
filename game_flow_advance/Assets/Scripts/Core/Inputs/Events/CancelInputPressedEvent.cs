@@ -1,6 +1,6 @@
 using Rossoforge.Events.Bus;
 
-namespace RossoGames.Inputs.Events
+namespace Rossogames.Inputs.Events
 {
     public readonly struct CancelInputPressedEvent : IEvent
     {
