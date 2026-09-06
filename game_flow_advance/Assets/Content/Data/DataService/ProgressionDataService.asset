@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: ProgressionDataService
   m_EditorClassIdentifier: Game::RossoGames.Progression.Service.ProgressionServiceData
   <FileName>k__BackingField: progression.sav
-  <EncoderKey>k__BackingField: lady
+  <EncoderKey>k__BackingField: 1234

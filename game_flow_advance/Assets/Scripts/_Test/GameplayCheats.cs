@@ -2,16 +2,12 @@ using Rossoforge.Services.Locator;
 using Rossogames.Currencies.DataEntities;
 using Rossogames.Currencies.DataStructures;
 using Rossogames.Currencies.Service;
-using Rossogames.Items.DataEntities;
 using Rossogames.PopupFlow.Service;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class GameplayCheats : MonoBehaviour
 {
-    [SerializeField]
-    public InventoryDataEntity _inventoryDataEntity;
-
     private ICurrencyService _currencyService;
     private IPopupFlowService _popupFlowService;
 
@@ -46,6 +42,8 @@ public class GameplayCheats : MonoBehaviour
     private void OpenPopup()
     {
         if (Keyboard.current.pKey.wasPressedThisFrame)
-            _popupFlowService.OpenPopupInventory(_inventoryDataEntity);
+        {
+            // open popup for testing purposes
+        }
     }
 }

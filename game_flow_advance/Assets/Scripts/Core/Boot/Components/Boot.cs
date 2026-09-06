@@ -9,11 +9,9 @@ using Rossogames.Cameras.Service;
 using Rossogames.Currencies.Service;
 using Rossogames.Gameplay.Service;
 using Rossogames.Inputs.Service;
-using Rossogames.Inventory.Service;
 using Rossogames.Level.Service;
 using Rossogames.PopupFlow.Service;
 using Rossogames.Progression.Service;
-using Rossogames.Raycast.Service;
 using Rossogames.SceneFlow.Service;
 using Rossogames.Settings.Service;
 using Sirenix.OdinInspector;
@@ -35,7 +33,6 @@ namespace Rossogames.Boot.Components
         [SerializeField, BoxGroup("Game")] private CameraDataService _cameraDataService;
         [SerializeField, BoxGroup("Game")] private GameplayDataService _gameplayDataService;
         [SerializeField, BoxGroup("Game")] private LevelDataService _levelDataService;
-        [SerializeField, BoxGroup("Game")] private InventoryDataService _inventoryDataService;
 
         private void Awake()
         {
@@ -76,14 +73,12 @@ namespace Rossogames.Boot.Components
             var sceneFlowService = new SceneFlowService(_sceneFlowDataService);
             var popupFlowService = new PopupFlowService(_popupFlowDataService);
             var settingsService = new SettingsService(_settingsDataService);
-            var raycastService = new RaycastService();
             var progressionDataService = new ProgressionService(_progressionDataService);
 
             ServiceLocator.Register<IInputsService>(inptuService);
             ServiceLocator.Register<ISceneFlowService>(sceneFlowService);
             ServiceLocator.Register<IPopupFlowService>(popupFlowService);
             ServiceLocator.Register<ISettingsService>(settingsService);
-            ServiceLocator.Register<IRaycastService>(raycastService);
             ServiceLocator.Register<IProgressionService>(progressionDataService);
         }
 
@@ -93,13 +88,11 @@ namespace Rossogames.Boot.Components
             var gameplayService = new GameplayService(_gameplayDataService);
             var levelService = new LevelService(_levelDataService);
             var currencyService = new CurrencyService();
-            var inventoryService = new InventoryService(_inventoryDataService);
 
             ServiceLocator.Register<ICameraService>(cameraService);
             ServiceLocator.Register<IGameplayService>(gameplayService);
             ServiceLocator.Register<ILevelService>(levelService);
             ServiceLocator.Register<ICurrencyService>(currencyService);
-            ServiceLocator.Register<IInventoryService>(inventoryService);
         }
     }
 }

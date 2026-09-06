@@ -9,9 +9,6 @@ using Rossoforge.Services.Service;
 using Rossoforge.Utils.Logger;
 using Rossogames.Common;
 using Rossogames.Inputs.Events;
-using Rossogames.Items.DataEntities;
-using Rossogames.Popups.Container;
-using Rossogames.Popups.Inventory;
 using Rossogames.Popups.Pause;
 using Rossogames.Popups.Question;
 using Rossogames.Popups.Settings;
@@ -93,28 +90,6 @@ namespace Rossogames.PopupFlow.Service
             );
 
             return popupData;
-        }
-
-        public async Awaitable OpenPopupContainer(ContainerDataEntity containerDataEntity)
-        {
-            var popupData = new PopupContainerData(containerDataEntity);
-
-            await OpenPopupUntilClosed<PopupContainerView, PopupContainerData>(
-                _dataService.PopupContainerAssetReference,
-                popupData,
-                poolCategory: PoolCategories.Gameplay
-            );
-        }
-
-        public async Awaitable OpenPopupInventory(InventoryDataEntity inventoryDataEntity)
-        {
-            var popupData = new PopupInventoryData(inventoryDataEntity);
-
-            await OpenPopupUntilClosed<PopupInventoryView, PopupInventoryData>(
-                _dataService.PopupInventoryAssetReference,
-                popupData,
-                poolCategory: PoolCategories.Gameplay
-            );
         }
 
         private async Awaitable<TView> OpenPopupUntilClosed<TView, TData>(

@@ -38,9 +38,6 @@ namespace Rossogames.Gameplay.Phases
 
         public virtual void Enter()
         {
-            _cameraService.AllowMove = DataBehaviour.AllowMove;
-            _cameraService.AllowRotate = DataBehaviour.AllowRotate;
-
             _eventService.Raise(new GameplayPhaseChangedEvent(this));
         }
         public virtual void Exit()
