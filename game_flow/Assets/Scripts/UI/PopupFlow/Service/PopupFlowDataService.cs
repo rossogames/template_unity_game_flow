@@ -29,19 +29,5 @@ namespace Rossogames.PopupFlow.Service
 #endif
         [field: SerializeField]
         public PooledGameobjectDataConfig PopupSettingsAssetReference { get; private set; }
-
-#if ODIN_INSPECTOR
-        [field: BoxGroup("Popup Asset Reference")]
-        [field: LabelText("Container")]
-#endif
-        [field: SerializeField]
-        public PooledGameobjectDataConfig PopupContainerAssetReference { get; private set; }
-
-#if ODIN_INSPECTOR
-        [field: BoxGroup("Popup Asset Reference")]
-        [field: LabelText("Inventory")]
-#endif
-        [field: SerializeField]
-        public PooledGameobjectDataConfig PopupInventoryAssetReference { get; private set; }
     }
 }
