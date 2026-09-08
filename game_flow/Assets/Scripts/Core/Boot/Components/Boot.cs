@@ -14,25 +14,26 @@ using Rossogames.PopupFlow.Service;
 using Rossogames.Progression.Service;
 using Rossogames.SceneFlow.Service;
 using Rossogames.Settings.Service;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Rossogames.Boot.Components
 {
     public class Boot : MonoBehaviour
     {
-        [SerializeField, BoxGroup("SDK")] private SceneDataService _sceneDataService;
-        [SerializeField, BoxGroup("SDK")] private PopupDataService _popupDataService;
-        [SerializeField, BoxGroup("SDK")] private AudioDataService _audioDataService;
+        [SerializeField] private SceneDataService _sceneDataService;
+        [SerializeField] private PopupDataService _popupDataService;
+        [SerializeField] private AudioDataService _audioDataService;
 
-        [SerializeField, BoxGroup("Core")] private SettingsDataService _settingsDataService;
-        [SerializeField, BoxGroup("Core")] private SceneFlowDataService _sceneFlowDataService;
-        [SerializeField, BoxGroup("Core")] private PopupFlowDataService _popupFlowDataService;
-        [SerializeField, BoxGroup("Core")] private ProgressionDataService _progressionDataService;
+        [Space]
+        [SerializeField] private SettingsDataService _settingsDataService;
+        [SerializeField] private SceneFlowDataService _sceneFlowDataService;
+        [SerializeField] private PopupFlowDataService _popupFlowDataService;
+        [SerializeField] private ProgressionDataService _progressionDataService;
 
-        [SerializeField, BoxGroup("Game")] private CameraDataService _cameraDataService;
-        [SerializeField, BoxGroup("Game")] private GameplayDataService _gameplayDataService;
-        [SerializeField, BoxGroup("Game")] private LevelDataService _levelDataService;
+        [Space]
+        [SerializeField] private CameraDataService _cameraDataService;
+        [SerializeField] private GameplayDataService _gameplayDataService;
+        [SerializeField] private LevelDataService _levelDataService;
 
         private void Awake()
         {
